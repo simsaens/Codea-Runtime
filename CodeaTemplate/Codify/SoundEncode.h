@@ -1,0 +1,38 @@
+//
+//  SoundEncode.h
+//  Codea
+//
+//  Created by Dylan Sale on 8/01/12.
+//  
+//  Copyright 2012 Two Lives Left Pty. Ltd.
+//  
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//  
+//  http://www.apache.org/licenses/LICENSE-2.0
+//  
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//  
+
+#ifndef Codify_SoundEncode_h
+#define Codify_SoundEncode_h
+
+#import <Foundation/Foundation.h>
+
+class sfxr;
+@class ALBuffer;
+
+//Defined in SoundCommands.mm
+ALBuffer* playSfxr(sfxr* instance, float volume = 1.0);
+
+//Defined in SoundCommands.mm
+NSString* encodeParametersShort(sfxr* instance);
+NSString* encodeParametersFull(sfxr* instance);
+bool decodeParameters(const char* base64Encoding, sfxr *instance);
+
+#endif

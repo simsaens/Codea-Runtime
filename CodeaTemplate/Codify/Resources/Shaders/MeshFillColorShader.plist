@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Files</key>
+	<array>
+		<string>FillColorTransform.vsh</string>
+		<string>MeshFillColorShader.fsh</string>
+	</array>
+	<key>Attributes</key>
+	<array>
+		<string>Vertex</string>
+	</array>
+	<key>Uniforms</key>
+	<array>
+		<string>ModelView</string>
+		<string>FillColor</string>
+	</array>
+</dict>
+</plist>

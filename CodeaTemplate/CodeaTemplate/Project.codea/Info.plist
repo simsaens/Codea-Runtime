@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Simeon Nasilowski</string>
+	<key>Description</key>
+	<string>A little game designed to show off sprite rendering, accelerometer, and sound effects. Tilt to move your hero, tap the screen to attack. Pick up gems to increase your attack radius.</string>
+	<key>Icon</key>
+	<string>ProjectDungeonRoller.png</string>
+</dict>
+</plist>
