@@ -38,7 +38,6 @@
 #import "ShaderManager.h"
 #import "TextureCache.h"
 #import "SpriteManager.h"
-#import "OpenGLImageCapture.h"
 #import "CaptureVideoPanel.h"
 
 #import "SoundCommands.h" //In order to update sound buffers

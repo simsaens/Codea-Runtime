@@ -356,7 +356,6 @@
 		FC65C1AD14CEC5AB002B1B67 /* CaptureVideoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1A114CEC5A7002B1B67 /* CaptureVideoPanel.m */; };
 		FC65C1AE14CEC5AB002B1B67 /* CaptureVideoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC65C1A214CEC5A7002B1B67 /* CaptureVideoPanel.xib */; };
 		FC65C1AF14CEC5AB002B1B67 /* CodifyScriptExecute.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1A414CEC5A8002B1B67 /* CodifyScriptExecute.m */; };
-		FC65C1B014CEC5AB002B1B67 /* OpenGLImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1A614CEC5A8002B1B67 /* OpenGLImageCapture.m */; };
 		FC65C1B214CEC5AB002B1B67 /* ScreenCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1AA14CEC5AA002B1B67 /* ScreenCapture.m */; };
 		FC65C1B614CEC62B002B1B67 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC65C1B514CEC62B002B1B67 /* CoreMedia.framework */; };
 		FC65C1BA14CED49E002B1B67 /* CodifyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1B914CED49E002B1B67 /* CodifyAppDelegate.m */; };
@@ -379,7 +378,6 @@
 		FCDFAB18151D6E7B002766CC /* codea_luaext.c in Sources */ = {isa = PBXBuildFile; fileRef = FC4283C9151D640D0096FFEC /* codea_luaext.c */; };
 		FCDFAB19151D6E88002766CC /* http.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDFAAE2151D6C77002766CC /* http.m */; };
 		FCDFAB1A151D6E9D002766CC /* OSCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4283D3151D64860096FFEC /* OSCommands.m */; };
-		FCDFAB1B151D6EA1002766CC /* UIImage+AutoLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4283D1151D645A0096FFEC /* UIImage+AutoLoad.m */; };
 		FCDFAB29151D6F50002766CC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDFAB28151D6F50002766CC /* CFNetwork.framework */; };
 		FCDFAB2C151D6F5A002766CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDFAB2B151D6F5A002766CC /* SystemConfiguration.framework */; };
 		FCDFAB2D151D6F6B002766CC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC65C1B314CEC603002B1B67 /* MobileCoreServices.framework */; };
@@ -676,8 +674,6 @@
 		FC4283CC151D640D0096FFEC /* matrix44.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix44.h; sourceTree = "<group>"; };
 		FC4283CD151D640D0096FFEC /* vec4.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vec4.c; sourceTree = "<group>"; };
 		FC4283CE151D640D0096FFEC /* vec4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vec4.h; sourceTree = "<group>"; };
-		FC4283D0151D645A0096FFEC /* UIImage+AutoLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+AutoLoad.h"; path = "Codify/UIImage+AutoLoad.h"; sourceTree = "<group>"; };
-		FC4283D1151D645A0096FFEC /* UIImage+AutoLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AutoLoad.m"; path = "Codify/UIImage+AutoLoad.m"; sourceTree = "<group>"; };
 		FC4283D2151D64860096FFEC /* OSCommands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OSCommands.h; path = Codify/OSCommands.h; sourceTree = "<group>"; };
 		FC4283D3151D64860096FFEC /* OSCommands.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OSCommands.m; path = Codify/OSCommands.m; sourceTree = "<group>"; };
 		FC65BDDD14CEB3CE002B1B67 /* ___PROJECTNAME___.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "___PROJECTNAME___.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -992,8 +988,6 @@
 		FC65C1A214CEC5A7002B1B67 /* CaptureVideoPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaptureVideoPanel.xib; path = Codify/CaptureVideoPanel.xib; sourceTree = "<group>"; };
 		FC65C1A314CEC5A8002B1B67 /* CodifyScriptExecute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodifyScriptExecute.h; path = Codify/CodifyScriptExecute.h; sourceTree = "<group>"; };
 		FC65C1A414CEC5A8002B1B67 /* CodifyScriptExecute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodifyScriptExecute.m; path = Codify/CodifyScriptExecute.m; sourceTree = "<group>"; };
-		FC65C1A514CEC5A8002B1B67 /* OpenGLImageCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLImageCapture.h; path = Codify/OpenGLImageCapture.h; sourceTree = "<group>"; };
-		FC65C1A614CEC5A8002B1B67 /* OpenGLImageCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLImageCapture.m; path = Codify/OpenGLImageCapture.m; sourceTree = "<group>"; };
 		FC65C1A914CEC5AA002B1B67 /* ScreenCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScreenCapture.h; path = Codify/ScreenCapture.h; sourceTree = "<group>"; };
 		FC65C1AA14CEC5AA002B1B67 /* ScreenCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScreenCapture.m; path = Codify/ScreenCapture.m; sourceTree = "<group>"; };
 		FC65C1B314CEC603002B1B67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -1783,8 +1777,6 @@
 				FC129DD915459B66007BD6BB /* MadeWithCodea.png */,
 				FC65C1A314CEC5A8002B1B67 /* CodifyScriptExecute.h */,
 				FC65C1A414CEC5A8002B1B67 /* CodifyScriptExecute.m */,
-				FC65C1A514CEC5A8002B1B67 /* OpenGLImageCapture.h */,
-				FC65C1A614CEC5A8002B1B67 /* OpenGLImageCapture.m */,
 				FC65C1A914CEC5AA002B1B67 /* ScreenCapture.h */,
 				FC65C1AA14CEC5AA002B1B67 /* ScreenCapture.m */,
 				FC65C0B714CEB816002B1B67 /* EAGLView.h */,
@@ -1840,8 +1832,6 @@
 				FC65C14B14CEB903002B1B67 /* TextureCache.m */,
 				FC852AA114F52BD70001E8C9 /* UIDevice-Hardware.h */,
 				FC852AA214F52BD70001E8C9 /* UIDevice-Hardware.m */,
-				FC4283D0151D645A0096FFEC /* UIImage+AutoLoad.h */,
-				FC4283D1151D645A0096FFEC /* UIImage+AutoLoad.m */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -2376,7 +2366,6 @@
 				FC65C19C14CEC52E002B1B67 /* Bundle.m in Sources */,
 				FC65C1AD14CEC5AB002B1B67 /* CaptureVideoPanel.m in Sources */,
 				FC65C1AF14CEC5AB002B1B67 /* CodifyScriptExecute.m in Sources */,
-				FC65C1B014CEC5AB002B1B67 /* OpenGLImageCapture.m in Sources */,
 				FC65C1B214CEC5AB002B1B67 /* ScreenCapture.m in Sources */,
 				FC65C1BA14CED49E002B1B67 /* CodifyAppDelegate.m in Sources */,
 				FC10E9A214D117F8004B5EFE /* Project.m in Sources */,
@@ -2424,7 +2413,6 @@
 				FCDFAB18151D6E7B002766CC /* codea_luaext.c in Sources */,
 				FCDFAB19151D6E88002766CC /* http.m in Sources */,
 				FCDFAB1A151D6E9D002766CC /* OSCommands.m in Sources */,
-				FCDFAB1B151D6EA1002766CC /* UIImage+AutoLoad.m in Sources */,
 				FC129DAD15459124007BD6BB /* BasicRendererViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
