@@ -54,6 +54,7 @@ The Codea Runtime Library uses the following open source libraries with gratitud
 + [GLM](http://glm.g-truc.net/)
 + [ObjectAL](http://kstenerud.github.com/ObjectAL-for-iPhone/)
 + [SFXR](http://code.google.com/p/sfxr/)
++ [UIDevice-Hardware](https://github.com/erica/uidevice-extension)
 
 In addition, the Codea API was inspired by [Processing](http://processing.org/).
 
