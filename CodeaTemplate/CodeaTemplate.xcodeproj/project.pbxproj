@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB8B204D1546B4D000191555 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B204C1546B4D000191555 /* Default-Landscape@2x~ipad.png */; };
+		DB8B20501546B4D400191555 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B204F1546B4D400191555 /* Default-Landscape~ipad.png */; };
+		DB8B20521546B4D800191555 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20511546B4D800191555 /* Default-Portrait@2x~ipad.png */; };
+		DB8B20541546B4DB00191555 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20531546B4DB00191555 /* Default-Portrait~ipad.png */; };
+		DB8B20561546B4E200191555 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20551546B4E200191555 /* Icon-72@2x.png */; };
+		DB8B20581546B4E800191555 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20571546B4E800191555 /* Icon-72.png */; };
 		FC0044A014F5239200F4B97B /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC0043C214F5239200F4B97B /* CMakeLists.txt */; };
 		FC0044A114F5239200F4B97B /* _swizzle.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043C714F5239200F4B97B /* _swizzle.inl */; };
 		FC0044A314F5239200F4B97B /* func_common.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043CA14F5239200F4B97B /* func_common.inl */; };
@@ -381,6 +387,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB8B204C1546B4D000191555 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		DB8B204F1546B4D400191555 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		DB8B20511546B4D800191555 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		DB8B20531546B4DB00191555 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		DB8B20551546B4E200191555 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		DB8B20571546B4E800191555 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		FC0043C214F5239200F4B97B /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		FC0043C414F5239200F4B97B /* _detail.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = _detail.hpp; sourceTree = "<group>"; };
 		FC0043C514F5239200F4B97B /* _fixes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = _fixes.hpp; sourceTree = "<group>"; };
@@ -1377,6 +1389,12 @@
 		FC65BDD214CEB3CE002B1B67 = {
 			isa = PBXGroup;
 			children = (
+				DB8B20571546B4E800191555 /* Icon-72.png */,
+				DB8B20551546B4E200191555 /* Icon-72@2x.png */,
+				DB8B20531546B4DB00191555 /* Default-Portrait~ipad.png */,
+				DB8B20511546B4D800191555 /* Default-Portrait@2x~ipad.png */,
+				DB8B204F1546B4D400191555 /* Default-Landscape~ipad.png */,
+				DB8B204C1546B4D000191555 /* Default-Landscape@2x~ipad.png */,
 				FC3628DA154408C9004F6731 /* LICENSE-Codea.txt */,
 				FC65BDE714CEB3CE002B1B67 /* Classes */,
 				FC65BDE014CEB3CE002B1B67 /* Frameworks */,
@@ -2202,6 +2220,12 @@
 				FC129DD615459B45007BD6BB /* CaptureSaveItButton.png in Resources */,
 				FC129DD715459B45007BD6BB /* CaptureSaveItButton@2x.png in Resources */,
 				FC129DDA15459B66007BD6BB /* MadeWithCodea.png in Resources */,
+				DB8B204D1546B4D000191555 /* Default-Landscape@2x~ipad.png in Resources */,
+				DB8B20501546B4D400191555 /* Default-Landscape~ipad.png in Resources */,
+				DB8B20521546B4D800191555 /* Default-Portrait@2x~ipad.png in Resources */,
+				DB8B20541546B4DB00191555 /* Default-Portrait~ipad.png in Resources */,
+				DB8B20561546B4E200191555 /* Icon-72@2x.png in Resources */,
+				DB8B20581546B4E800191555 /* Icon-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
