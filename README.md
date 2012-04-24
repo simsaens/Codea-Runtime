@@ -24,6 +24,8 @@ The Codea Runtime Library requires OSX and the iOS 5.0 Developer Tools. An iOS D
 Setup
 -----
 
+Extracting your project's codea folder from the iPad can be done using [iExplorer](http://www.macroplant.com/iexplorer/)
+
 1. Run the make_project.sh script from a Terminal session. It takes a parameter which is the name of the app.
    + eg, `./make_project.sh Test` will create a folder called **Test** with a CodeaTemplate.xcodeproj file inside it and targets of the same name set up 
 2. Open the CodeaTemplate.xcodeproj project in XCode.
@@ -54,3 +56,10 @@ The Codea Runtime Library uses the following open source libraries with gratitud
 + [SFXR](http://code.google.com/p/sfxr/)
 
 In addition, the Lua API was heavily inspired by [Processing](http://processing.org/).
+
+Sprite Pack Attribution
+-----------------------
++ "Planet Cute" art by Daniel Cook (Lostgarden.com)
++ "Small World" art by Daniel Cook (Lostgarden.com)
++ "SpaceCute" art by Daniel Cook (Lostgarden.com)
++ "Tyrian Remastered" art by Daniel Cook (Lostgarden.com)
