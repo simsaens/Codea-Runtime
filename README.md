@@ -1,7 +1,7 @@
 Codea Runtime Library (BETA)
 ============================
 
-This is the Codea Runtime Library. It provides all the Lua bindings and graphics, sound and runtime engine for Codea on iPad. Using this library you can create standalone apps from a [Codea](http://twolivesleft.com/Codea/) project.
+This is the Codea Runtime Library. It provides all the Lua bindings, graphics, sound and runtime engine for Codea on iPad. Using this library you can create standalone apps from a [Codea](http://twolivesleft.com/Codea/) project.
 
 This version is a BETA. Please report any issues to us on the issue tracker on github. The underlying library is release-worthy, but the related scripts could have issues.
 
@@ -59,10 +59,10 @@ In addition, the Codea API was inspired by [Processing](http://processing.org/).
 
 Sprite Pack Attribution
 -----------------------
-+ "Planet Cute" art by Daniel Cook (Lostgarden.com)
-+ "Small World" art by Daniel Cook (Lostgarden.com)
-+ "SpaceCute" art by Daniel Cook (Lostgarden.com)
-+ "Tyrian Remastered" art by Daniel Cook (Lostgarden.com)
++ "Planet Cute" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
++ "Small World" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
++ "SpaceCute" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
++ "Tyrian Remastered" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
 
 Copyright and Trademark Guidelines
 ----------------------------------
@@ -73,7 +73,7 @@ Guidelines for app developers using the Codea Runtime Library to produce apps fo
 
 + *Attribution:* You may use the Codea trademark when attributing Codea in your application, for example
   + You may include the "Made with Codea™" graphic in your application
-  + You may describe the application as "Made with Codea" or "Made with the Codea Runtime Library" in your application's marketing materials
+  + You may describe your application as "Made with Codea" or "Made with the Codea Runtime Library" in your application's marketing materials
 
 **Unauthorized Use of Two Lives Left Trademarks**
 
