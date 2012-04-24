@@ -14,7 +14,7 @@ The topmost is the current version.
 License
 -------
 
-The Codea Runtime Library is copyright 2012 [Two Lives Left](http://www.twolivesleft.com) and is licensed under the Apache License v2.0.
+The Codea Runtime Library is Copyright 2012 [Two Lives Left](http://www.twolivesleft.com) and is licensed under the Apache License v2.0.
 
 Requirements
 ------------
