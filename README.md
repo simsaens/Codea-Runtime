@@ -19,7 +19,7 @@ The Codea Runtime Library is copyright 2012 [Two Lives Left](http://www.twolives
 Requirements
 ------------
 
-The Codea Runtime Library requires OSX and the iOS 5.0 Developer Tools. An iOS Developer License is required to build the app for devices and distribute on the Apple App Store.
+The Codea Runtime Library requires Mac OS X and the iOS 5.0 Developer Tools. An iOS Developer License is required to build for devices and distribute on the Apple App Store.
 
 Setup
 -----
@@ -28,10 +28,10 @@ Extracting your project's codea folder from the iPad can be done using [iExplore
 
 1. Run the make_project.sh script from a Terminal session. It takes a parameter which is the name of the app.
    + eg, `./make_project.sh Test` will create a folder called **Test** with a CodeaTemplate.xcodeproj file inside it and targets of the same name set up 
-2. Open the CodeaTemplate.xcodeproj project in XCode.
+2. Open the CodeaTemplate.xcodeproj project in Xcode.
 3. Delete the existing the Project.codea file from the Classes group and select Move To Trash
 4. Rename your codea project Project.codea
-5. Drag and drop your project into the XCode project
+5. Drag and drop your project into the Xcode project
 6. Check the "Copy items into destination folder's group (if needed)"
 7. Select "Create folder references for any added folders" and make sure your app's  target is selected. Click Finish
 8. Setup the bundle id and Icon for your project as per usual
@@ -55,7 +55,7 @@ The Codea Runtime Library uses the following open source libraries with gratitud
 + [ObjectAL](http://kstenerud.github.com/ObjectAL-for-iPhone/)
 + [SFXR](http://code.google.com/p/sfxr/)
 
-In addition, the Lua API was heavily inspired by [Processing](http://processing.org/).
+In addition, the Codea API was inspired by [Processing](http://processing.org/).
 
 Sprite Pack Attribution
 -----------------------
@@ -63,3 +63,19 @@ Sprite Pack Attribution
 + "Small World" art by Daniel Cook (Lostgarden.com)
 + "SpaceCute" art by Daniel Cook (Lostgarden.com)
 + "Tyrian Remastered" art by Daniel Cook (Lostgarden.com)
+
+Copyright and Trademark Guidelines
+----------------------------------
+
+Guidelines for app developers using the Codea Runtime Library to produce apps for distribution.
+
+**Authorized Use of Two Lives Left Trademarks**
+
++ *Attribution:* You may use the Codea trademark when attributing Codea in your application, for example
+  + You may include the "Made with Codea™" graphic in your application
+  + You may describe the application as "Made with Codea" or "Made with the Codea Runtime Library" in your application's marketing materials
+
+**Unauthorized Use of Two Lives Left Trademarks**
+
++ *Company, Product, or Service Name:* You may not use or register Codea, Two Lives Left, or any other Two Lives Left-owned trademark as part of a company name, product name, trade name or service name. This includes Two Lives Left-owned graphic symbols, logos and icons.
++ *Endorsement:* You may not use Codea, Two Lives Left, or any other Two Lives Left-owned tradmarks in a manner that would imply Two Lives Left's endorsement of a third party product or service.
