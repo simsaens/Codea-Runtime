@@ -83,7 +83,7 @@
     }
     
         
-    self.currentProject = [[Project alloc] initWithPath:destPath validFileTypes:[NSArray arrayWithObjects:@"lua", @"plist", nil]];
+    self.currentProject = [[[Project alloc] initWithPath:destPath validFileTypes:[NSArray arrayWithObjects:@"lua", @"plist", nil]] autorelease];
     [self showRenderView:YES animated:NO];
     [[CodifyScriptExecute sharedInstance] runProject:self.currentProject];
     
