@@ -428,6 +428,7 @@ UIImage* createUIImageFromImage(image_type* image)
     
     CGDataProviderRelease(provider);
     CGImageRelease(imageRef);
+	CGColorSpaceRelease(colorSpaceRef);
     
     return newImage;    
 }
