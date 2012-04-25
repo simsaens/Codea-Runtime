@@ -13,156 +13,29 @@
 		DB8B20541546B4DB00191555 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20531546B4DB00191555 /* Default-Portrait~ipad.png */; };
 		DB8B20561546B4E200191555 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20551546B4E200191555 /* Icon-72@2x.png */; };
 		DB8B20581546B4E800191555 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8B20571546B4E800191555 /* Icon-72.png */; };
-		FC0044A014F5239200F4B97B /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC0043C214F5239200F4B97B /* CMakeLists.txt */; };
-		FC0044A114F5239200F4B97B /* _swizzle.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043C714F5239200F4B97B /* _swizzle.inl */; };
-		FC0044A314F5239200F4B97B /* func_common.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043CA14F5239200F4B97B /* func_common.inl */; };
-		FC0044A414F5239200F4B97B /* func_exponential.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043CC14F5239200F4B97B /* func_exponential.inl */; };
-		FC0044A514F5239200F4B97B /* func_geometric.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043CE14F5239200F4B97B /* func_geometric.inl */; };
-		FC0044A614F5239200F4B97B /* func_integer.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043D014F5239200F4B97B /* func_integer.inl */; };
-		FC0044A714F5239200F4B97B /* func_matrix.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043D214F5239200F4B97B /* func_matrix.inl */; };
-		FC0044A814F5239200F4B97B /* func_noise.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043D414F5239200F4B97B /* func_noise.inl */; };
-		FC0044A914F5239200F4B97B /* func_packing.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043D614F5239200F4B97B /* func_packing.inl */; };
-		FC0044AA14F5239200F4B97B /* func_trigonometric.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043D814F5239200F4B97B /* func_trigonometric.inl */; };
-		FC0044AB14F5239200F4B97B /* func_vector_relational.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043DA14F5239200F4B97B /* func_vector_relational.inl */; };
-		FC0044AC14F5239200F4B97B /* intrinsic_common.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043DD14F5239200F4B97B /* intrinsic_common.inl */; };
-		FC0044AD14F5239200F4B97B /* intrinsic_exponential.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043DF14F5239200F4B97B /* intrinsic_exponential.inl */; };
-		FC0044AE14F5239200F4B97B /* intrinsic_geometric.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043E114F5239200F4B97B /* intrinsic_geometric.inl */; };
-		FC0044AF14F5239200F4B97B /* intrinsic_matrix.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043E314F5239200F4B97B /* intrinsic_matrix.inl */; };
-		FC0044B014F5239200F4B97B /* intrinsic_trigonometric.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043E514F5239200F4B97B /* intrinsic_trigonometric.inl */; };
-		FC0044B114F5239200F4B97B /* intrinsic_vector_relational.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043E714F5239200F4B97B /* intrinsic_vector_relational.inl */; };
-		FC0044B214F5239200F4B97B /* type_gentype.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043EC14F5239200F4B97B /* type_gentype.inl */; };
-		FC0044B314F5239200F4B97B /* type_half.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043EE14F5239200F4B97B /* type_half.inl */; };
-		FC0044B414F5239200F4B97B /* type_mat.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043F114F5239200F4B97B /* type_mat.inl */; };
-		FC0044B514F5239200F4B97B /* type_mat2x2.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043F314F5239200F4B97B /* type_mat2x2.inl */; };
-		FC0044B614F5239200F4B97B /* type_mat2x3.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043F514F5239200F4B97B /* type_mat2x3.inl */; };
-		FC0044B714F5239200F4B97B /* type_mat2x4.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043F714F5239200F4B97B /* type_mat2x4.inl */; };
-		FC0044B814F5239200F4B97B /* type_mat3x2.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043F914F5239200F4B97B /* type_mat3x2.inl */; };
-		FC0044B914F5239200F4B97B /* type_mat3x3.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043FB14F5239200F4B97B /* type_mat3x3.inl */; };
-		FC0044BA14F5239200F4B97B /* type_mat3x4.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043FD14F5239200F4B97B /* type_mat3x4.inl */; };
-		FC0044BB14F5239200F4B97B /* type_mat4x2.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC0043FF14F5239200F4B97B /* type_mat4x2.inl */; };
-		FC0044BC14F5239200F4B97B /* type_mat4x3.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440114F5239200F4B97B /* type_mat4x3.inl */; };
-		FC0044BD14F5239200F4B97B /* type_mat4x4.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440314F5239200F4B97B /* type_mat4x4.inl */; };
-		FC0044BE14F5239200F4B97B /* type_vec.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440614F5239200F4B97B /* type_vec.inl */; };
-		FC0044BF14F5239200F4B97B /* type_vec1.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440814F5239200F4B97B /* type_vec1.inl */; };
-		FC0044C014F5239200F4B97B /* type_vec2.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440A14F5239200F4B97B /* type_vec2.inl */; };
-		FC0044C114F5239200F4B97B /* type_vec3.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440C14F5239200F4B97B /* type_vec3.inl */; };
-		FC0044C214F5239200F4B97B /* type_vec4.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00440E14F5239200F4B97B /* type_vec4.inl */; };
-		FC0044C314F5239200F4B97B /* half_float.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00441314F5239200F4B97B /* half_float.inl */; };
-		FC0044C414F5239200F4B97B /* matrix_access.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00441514F5239200F4B97B /* matrix_access.inl */; };
-		FC0044C514F5239200F4B97B /* matrix_inverse.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00441814F5239200F4B97B /* matrix_inverse.inl */; };
-		FC0044C614F5239200F4B97B /* matrix_transform.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00441A14F5239200F4B97B /* matrix_transform.inl */; };
-		FC0044C714F5239200F4B97B /* quaternion.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00441C14F5239200F4B97B /* quaternion.inl */; };
-		FC0044C914F5239200F4B97B /* type_precision.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442014F5239200F4B97B /* type_precision.inl */; };
-		FC0044CA14F5239200F4B97B /* type_ptr.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442214F5239200F4B97B /* type_ptr.inl */; };
-		FC0044CB14F5239200F4B97B /* associated_min_max.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442514F5239200F4B97B /* associated_min_max.inl */; };
-		FC0044CC14F5239200F4B97B /* bit.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442714F5239200F4B97B /* bit.inl */; };
-		FC0044CD14F5239200F4B97B /* closest_point.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442914F5239200F4B97B /* closest_point.inl */; };
-		FC0044CE14F5239200F4B97B /* color_cast.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442B14F5239200F4B97B /* color_cast.inl */; };
-		FC0044CF14F5239200F4B97B /* color_space.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442D14F5239200F4B97B /* color_space.inl */; };
-		FC0044D014F5239200F4B97B /* color_space_YCoCg.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00442F14F5239200F4B97B /* color_space_YCoCg.inl */; };
-		FC0044D114F5239200F4B97B /* compatibility.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443114F5239200F4B97B /* compatibility.inl */; };
-		FC0044D214F5239200F4B97B /* component_wise.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443314F5239200F4B97B /* component_wise.inl */; };
-		FC0044D314F5239200F4B97B /* epsilon.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443514F5239200F4B97B /* epsilon.inl */; };
-		FC0044D414F5239200F4B97B /* euler_angles.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443714F5239200F4B97B /* euler_angles.inl */; };
-		FC0044D514F5239200F4B97B /* extend.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443914F5239200F4B97B /* extend.inl */; };
-		FC0044D614F5239200F4B97B /* extented_min_max.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443B14F5239200F4B97B /* extented_min_max.inl */; };
-		FC0044D714F5239200F4B97B /* fast_exponential.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443D14F5239200F4B97B /* fast_exponential.inl */; };
-		FC0044D814F5239200F4B97B /* fast_square_root.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00443F14F5239200F4B97B /* fast_square_root.inl */; };
-		FC0044D914F5239200F4B97B /* fast_trigonometry.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444114F5239200F4B97B /* fast_trigonometry.inl */; };
-		FC0044DA14F5239200F4B97B /* gradient_paint.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444314F5239200F4B97B /* gradient_paint.inl */; };
-		FC0044DB14F5239200F4B97B /* handed_coordinate_space.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444514F5239200F4B97B /* handed_coordinate_space.inl */; };
-		FC0044DC14F5239200F4B97B /* inertia.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444714F5239200F4B97B /* inertia.inl */; };
-		FC0044DD14F5239200F4B97B /* int_10_10_10_2.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444914F5239200F4B97B /* int_10_10_10_2.inl */; };
-		FC0044DE14F5239200F4B97B /* integer.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444B14F5239200F4B97B /* integer.inl */; };
-		FC0044DF14F5239200F4B97B /* intersect.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444D14F5239200F4B97B /* intersect.inl */; };
-		FC0044E014F5239200F4B97B /* log_base.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00444F14F5239200F4B97B /* log_base.inl */; };
-		FC0044E114F5239200F4B97B /* matrix_cross_product.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445114F5239200F4B97B /* matrix_cross_product.inl */; };
-		FC0044E214F5239200F4B97B /* matrix_interpolation.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445314F5239200F4B97B /* matrix_interpolation.inl */; };
-		FC0044E314F5239200F4B97B /* matrix_major_storage.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445514F5239200F4B97B /* matrix_major_storage.inl */; };
-		FC0044E414F5239200F4B97B /* matrix_operation.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445714F5239200F4B97B /* matrix_operation.inl */; };
-		FC0044E514F5239200F4B97B /* matrix_query.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445914F5239200F4B97B /* matrix_query.inl */; };
-		FC0044E614F5239200F4B97B /* mixed_product.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445B14F5239200F4B97B /* mixed_product.inl */; };
-		FC0044E714F5239200F4B97B /* multiple.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445D14F5239200F4B97B /* multiple.inl */; };
-		FC0044E814F5239200F4B97B /* noise.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00445F14F5239200F4B97B /* noise.inl */; };
-		FC0044E914F5239200F4B97B /* norm.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446114F5239200F4B97B /* norm.inl */; };
-		FC0044EA14F5239200F4B97B /* normal.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446314F5239200F4B97B /* normal.inl */; };
-		FC0044EB14F5239200F4B97B /* normalize_dot.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446514F5239200F4B97B /* normalize_dot.inl */; };
-		FC0044EC14F5239200F4B97B /* number_precision.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446714F5239200F4B97B /* number_precision.inl */; };
-		FC0044ED14F5239200F4B97B /* ocl_type.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446914F5239200F4B97B /* ocl_type.inl */; };
-		FC0044EE14F5239200F4B97B /* optimum_pow.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446B14F5239200F4B97B /* optimum_pow.inl */; };
-		FC0044EF14F5239200F4B97B /* orthonormalize.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446D14F5239200F4B97B /* orthonormalize.inl */; };
-		FC0044F014F5239200F4B97B /* perpendicular.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00446F14F5239200F4B97B /* perpendicular.inl */; };
-		FC0044F114F5239200F4B97B /* polar_coordinates.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447114F5239200F4B97B /* polar_coordinates.inl */; };
-		FC0044F214F5239200F4B97B /* projection.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447314F5239200F4B97B /* projection.inl */; };
-		FC0044F314F5239200F4B97B /* quaternion.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447514F5239200F4B97B /* quaternion.inl */; };
-		FC0044F414F5239200F4B97B /* random.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447714F5239200F4B97B /* random.inl */; };
-		FC0044F514F5239200F4B97B /* raw_data.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447914F5239200F4B97B /* raw_data.inl */; };
-		FC0044F614F5239200F4B97B /* reciprocal.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447B14F5239200F4B97B /* reciprocal.inl */; };
-		FC0044F714F5239200F4B97B /* rotate_vector.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447D14F5239200F4B97B /* rotate_vector.inl */; };
-		FC0044F814F5239200F4B97B /* simd_mat4.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00447F14F5239200F4B97B /* simd_mat4.inl */; };
-		FC0044F914F5239200F4B97B /* simd_vec4.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448114F5239200F4B97B /* simd_vec4.inl */; };
-		FC0044FA14F5239200F4B97B /* simplex.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448314F5239200F4B97B /* simplex.inl */; };
-		FC0044FB14F5239200F4B97B /* spline.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448514F5239200F4B97B /* spline.inl */; };
-		FC0044FC14F5239200F4B97B /* std_based_type.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448714F5239200F4B97B /* std_based_type.inl */; };
-		FC0044FD14F5239200F4B97B /* string_cast.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448914F5239200F4B97B /* string_cast.inl */; };
-		FC0044FE14F5239200F4B97B /* transform.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448B14F5239200F4B97B /* transform.inl */; };
-		FC0044FF14F5239200F4B97B /* transform2.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448D14F5239200F4B97B /* transform2.inl */; };
-		FC00450014F5239200F4B97B /* ulp.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00448F14F5239200F4B97B /* ulp.inl */; };
-		FC00450114F5239200F4B97B /* unsigned_int.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449114F5239200F4B97B /* unsigned_int.inl */; };
-		FC00450214F5239200F4B97B /* vec1.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449314F5239200F4B97B /* vec1.inl */; };
-		FC00450314F5239200F4B97B /* vector_access.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449514F5239200F4B97B /* vector_access.inl */; };
-		FC00450414F5239200F4B97B /* vector_angle.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449714F5239200F4B97B /* vector_angle.inl */; };
-		FC00450514F5239200F4B97B /* vector_query.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449914F5239200F4B97B /* vector_query.inl */; };
-		FC00450614F5239200F4B97B /* verbose_operator.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449B14F5239200F4B97B /* verbose_operator.inl */; };
-		FC00450714F5239200F4B97B /* wrap.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC00449D14F5239200F4B97B /* wrap.inl */; };
 		FC10E9A214D117F8004B5EFE /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9A114D117F8004B5EFE /* Project.m */; };
 		FC10E9A614D11879004B5EFE /* EditorBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9A514D11879004B5EFE /* EditorBuffer.m */; };
 		FC10E9A914D11A60004B5EFE /* Class.lua in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9A714D11A60004B5EFE /* Class.lua */; };
 		FC10E9AA14D11A60004B5EFE /* LuaSandbox.lua in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9A814D11A60004B5EFE /* LuaSandbox.lua */; };
 		FC10E9AC14D11CB1004B5EFE /* Project.codea in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9AB14D11CB1004B5EFE /* Project.codea */; };
-		FC10EA1114D154AF004B5EFE /* BasicTransform.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9B914D1542B004B5EFE /* BasicTransform.vsh */; };
-		FC10EA1214D154AF004B5EFE /* CircleShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9BA14D1542B004B5EFE /* CircleShader.fsh */; };
 		FC10EA1314D154AF004B5EFE /* CircleShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9BB14D1542B004B5EFE /* CircleShader.plist */; };
-		FC10EA1414D154AF004B5EFE /* CircleShaderNoStroke.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9BC14D1542B004B5EFE /* CircleShaderNoStroke.fsh */; };
 		FC10EA1514D154AF004B5EFE /* CircleShaderNoStroke.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9BD14D1542B004B5EFE /* CircleShaderNoStroke.plist */; };
-		FC10EA1614D154AF004B5EFE /* ColorTextureTransform.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9BE14D1542B004B5EFE /* ColorTextureTransform.vsh */; };
-		FC10EA1714D154AF004B5EFE /* ColorTransform.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9BF14D1542B004B5EFE /* ColorTransform.vsh */; };
-		FC10EA1814D154AF004B5EFE /* FillColorTextureTransform.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9C014D1542B004B5EFE /* FillColorTextureTransform.vsh */; };
-		FC10EA1914D154AF004B5EFE /* FillColorTransform.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9C114D1542B004B5EFE /* FillColorTransform.vsh */; };
-		FC10EA1A14D154AF004B5EFE /* LineRoundCapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9C214D1542B004B5EFE /* LineRoundCapShader.fsh */; };
 		FC10EA1B14D154AF004B5EFE /* LineRoundCapShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9C314D1542B004B5EFE /* LineRoundCapShader.plist */; };
-		FC10EA1C14D154AF004B5EFE /* LineShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9C414D1542B004B5EFE /* LineShader.fsh */; };
 		FC10EA1D14D154AF004B5EFE /* LineShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9C514D1542B004B5EFE /* LineShader.plist */; };
-		FC10EA1E14D154AF004B5EFE /* Mesh2DShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9C614D1542B004B5EFE /* Mesh2DShader.fsh */; };
 		FC10EA1F14D154AF004B5EFE /* Mesh2DShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9C714D1542B004B5EFE /* Mesh2DShader.plist */; };
-		FC10EA2014D154AF004B5EFE /* Mesh2DTexturedShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9C814D1542B004B5EFE /* Mesh2DTexturedShader.fsh */; };
 		FC10EA2114D154AF004B5EFE /* Mesh2DTexturedShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9C914D1542B004B5EFE /* Mesh2DTexturedShader.plist */; };
-		FC10EA2214D154AF004B5EFE /* MeshFillColorShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9CA14D1542B004B5EFE /* MeshFillColorShader.fsh */; };
 		FC10EA2314D154AF004B5EFE /* MeshFillColorShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9CB14D1542B004B5EFE /* MeshFillColorShader.plist */; };
-		FC10EA2414D154AF004B5EFE /* MeshFillColorTextureShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9CC14D1542B004B5EFE /* MeshFillColorTextureShader.fsh */; };
 		FC10EA2514D154AF004B5EFE /* MeshFillColorTextureShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9CD14D1542B004B5EFE /* MeshFillColorTextureShader.plist */; };
-		FC10EA2614D154AF004B5EFE /* PassThroughShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9CE14D1542B004B5EFE /* PassThroughShader.fsh */; };
 		FC10EA2714D154AF004B5EFE /* PassThroughShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9CF14D1542B004B5EFE /* PassThroughShader.plist */; };
-		FC10EA2814D154AF004B5EFE /* PassThroughShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9D014D1542B004B5EFE /* PassThroughShader.vsh */; };
-		FC10EA2914D154AF004B5EFE /* RectShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9D114D1542B004B5EFE /* RectShader.fsh */; };
 		FC10EA2A14D154AF004B5EFE /* RectShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9D214D1542B004B5EFE /* RectShader.plist */; };
-		FC10EA2B14D154AF004B5EFE /* RectShaderNoSmooth.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9D314D1542B004B5EFE /* RectShaderNoSmooth.fsh */; };
 		FC10EA2C14D154AF004B5EFE /* RectShaderNoSmooth.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9D414D1542B004B5EFE /* RectShaderNoSmooth.plist */; };
-		FC10EA2D14D154AF004B5EFE /* RectShaderNoStroke.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9D514D1542B004B5EFE /* RectShaderNoStroke.fsh */; };
 		FC10EA2E14D154AF004B5EFE /* RectShaderNoStroke.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9D614D1542B004B5EFE /* RectShaderNoStroke.plist */; };
-		FC10EA2F14D154AF004B5EFE /* RectShaderNoStrokeNoSmooth.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9D714D1542B004B5EFE /* RectShaderNoStrokeNoSmooth.fsh */; };
 		FC10EA3014D154AF004B5EFE /* RectShaderNoStrokeNoSmooth.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9D814D1542B004B5EFE /* RectShaderNoStrokeNoSmooth.plist */; };
-		FC10EA3114D154AF004B5EFE /* SimpleLineShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9D914D1542B004B5EFE /* SimpleLineShader.fsh */; };
 		FC10EA3214D154AF004B5EFE /* SimpleLineShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9DA14D1542B004B5EFE /* SimpleLineShader.plist */; };
-		FC10EA3314D154AF004B5EFE /* SpriteShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9DB14D1542B004B5EFE /* SpriteShader.fsh */; };
 		FC10EA3414D154AF004B5EFE /* SpriteShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9DC14D1542B004B5EFE /* SpriteShader.plist */; };
-		FC10EA3514D154AF004B5EFE /* SpriteShaderNoTint.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9DD14D1542B004B5EFE /* SpriteShaderNoTint.fsh */; };
 		FC10EA3614D154AF004B5EFE /* SpriteShaderNoTint.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9DE14D1542B004B5EFE /* SpriteShaderNoTint.plist */; };
-		FC10EA3714D154AF004B5EFE /* SpriteShaderTintAlpha.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9DF14D1542B004B5EFE /* SpriteShaderTintAlpha.fsh */; };
 		FC10EA3814D154AF004B5EFE /* SpriteShaderTintAlpha.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9E014D1542B004B5EFE /* SpriteShaderTintAlpha.plist */; };
-		FC10EA3914D154AF004B5EFE /* SpriteShaderTintRGB.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9E114D1542B004B5EFE /* SpriteShaderTintRGB.fsh */; };
 		FC10EA3A14D154AF004B5EFE /* SpriteShaderTintRGB.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9E214D1542B004B5EFE /* SpriteShaderTintRGB.plist */; };
-		FC10EA3B14D154AF004B5EFE /* TextShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9E314D1542B004B5EFE /* TextShader.fsh */; };
 		FC10EA3C14D154AF004B5EFE /* TextShader.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9E414D1542B004B5EFE /* TextShader.plist */; };
 		FC10EA3D14D154C1004B5EFE /* BasicTransform.vsh in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9B914D1542B004B5EFE /* BasicTransform.vsh */; };
 		FC10EA3E14D154C1004B5EFE /* CircleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9BA14D1542B004B5EFE /* CircleShader.fsh */; };
@@ -246,8 +119,6 @@
 		FC65BEC414CEB6E7002B1B67 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = FC65BE8214CEB6E6002B1B67 /* vec2.c */; };
 		FC65BEC514CEB6E7002B1B67 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = FC65BE8414CEB6E6002B1B67 /* vec3.c */; };
 		FC65BEC714CEB721002B1B67 /* SpritePacks in Resources */ = {isa = PBXBuildFile; fileRef = FC65BEC614CEB721002B1B67 /* SpritePacks */; };
-		FC65C07A14CEB783002B1B67 /* Box2DConfig.cmake in Resources */ = {isa = PBXBuildFile; fileRef = FC65C01214CEB783002B1B67 /* Box2DConfig.cmake */; };
-		FC65C07B14CEB783002B1B67 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC65C01314CEB783002B1B67 /* CMakeLists.txt */; };
 		FC65C07C14CEB783002B1B67 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC65C01514CEB783002B1B67 /* b2BroadPhase.cpp */; };
 		FC65C07D14CEB783002B1B67 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC65C01714CEB783002B1B67 /* b2CollideCircle.cpp */; };
 		FC65C07E14CEB783002B1B67 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC65C01814CEB783002B1B67 /* b2CollideEdge.cpp */; };
@@ -360,7 +231,6 @@
 		FC65C1B614CEC62B002B1B67 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC65C1B514CEC62B002B1B67 /* CoreMedia.framework */; };
 		FC65C1BA14CED49E002B1B67 /* CodifyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1B914CED49E002B1B67 /* CodifyAppDelegate.m */; };
 		FC852AA314F52BD70001E8C9 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = FC852AA214F52BD70001E8C9 /* UIDevice-Hardware.m */; };
-		FC852AAA14F52D830001E8C9 /* swizzle.inl in Resources */ = {isa = PBXBuildFile; fileRef = FC852AA914F52D830001E8C9 /* swizzle.inl */; };
 		FCCF511E14F4E79300A9E63D /* SharedRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF511D14F4E79300A9E63D /* SharedRenderer.m */; };
 		FCCF512114F4E84C00A9E63D /* soundbuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF512014F4E84C00A9E63D /* soundbuffer.m */; };
 		FCCF512714F4E8BB00A9E63D /* DeviceCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF512614F4E8BB00A9E63D /* DeviceCommands.m */; };
@@ -2074,8 +1944,6 @@
 				FC10EA5514D154C1004B5EFE /* TextShader.fsh in Resources */,
 				FC65BDEC14CEB3CE002B1B67 /* InfoPlist.strings in Resources */,
 				FC65BEC714CEB721002B1B67 /* SpritePacks in Resources */,
-				FC65C07A14CEB783002B1B67 /* Box2DConfig.cmake in Resources */,
-				FC65C07B14CEB783002B1B67 /* CMakeLists.txt in Resources */,
 				FC65C11014CEB88B002B1B67 /* LICENSE.ObjectAL.txt in Resources */,
 				FC65C1AE14CEC5AB002B1B67 /* CaptureVideoPanel.xib in Resources */,
 				FC10E9A914D11A60004B5EFE /* Class.lua in Resources */,
@@ -2100,109 +1968,6 @@
 				FC10EA3814D154AF004B5EFE /* SpriteShaderTintAlpha.plist in Resources */,
 				FC10EA3A14D154AF004B5EFE /* SpriteShaderTintRGB.plist in Resources */,
 				FC10EA3C14D154AF004B5EFE /* TextShader.plist in Resources */,
-				FC0044A014F5239200F4B97B /* CMakeLists.txt in Resources */,
-				FC0044A114F5239200F4B97B /* _swizzle.inl in Resources */,
-				FC0044A314F5239200F4B97B /* func_common.inl in Resources */,
-				FC0044A414F5239200F4B97B /* func_exponential.inl in Resources */,
-				FC0044A514F5239200F4B97B /* func_geometric.inl in Resources */,
-				FC0044A614F5239200F4B97B /* func_integer.inl in Resources */,
-				FC0044A714F5239200F4B97B /* func_matrix.inl in Resources */,
-				FC0044A814F5239200F4B97B /* func_noise.inl in Resources */,
-				FC0044A914F5239200F4B97B /* func_packing.inl in Resources */,
-				FC0044AA14F5239200F4B97B /* func_trigonometric.inl in Resources */,
-				FC0044AB14F5239200F4B97B /* func_vector_relational.inl in Resources */,
-				FC0044AC14F5239200F4B97B /* intrinsic_common.inl in Resources */,
-				FC0044AD14F5239200F4B97B /* intrinsic_exponential.inl in Resources */,
-				FC0044AE14F5239200F4B97B /* intrinsic_geometric.inl in Resources */,
-				FC0044AF14F5239200F4B97B /* intrinsic_matrix.inl in Resources */,
-				FC0044B014F5239200F4B97B /* intrinsic_trigonometric.inl in Resources */,
-				FC0044B114F5239200F4B97B /* intrinsic_vector_relational.inl in Resources */,
-				FC0044B214F5239200F4B97B /* type_gentype.inl in Resources */,
-				FC0044B314F5239200F4B97B /* type_half.inl in Resources */,
-				FC0044B414F5239200F4B97B /* type_mat.inl in Resources */,
-				FC0044B514F5239200F4B97B /* type_mat2x2.inl in Resources */,
-				FC0044B614F5239200F4B97B /* type_mat2x3.inl in Resources */,
-				FC0044B714F5239200F4B97B /* type_mat2x4.inl in Resources */,
-				FC0044B814F5239200F4B97B /* type_mat3x2.inl in Resources */,
-				FC0044B914F5239200F4B97B /* type_mat3x3.inl in Resources */,
-				FC0044BA14F5239200F4B97B /* type_mat3x4.inl in Resources */,
-				FC0044BB14F5239200F4B97B /* type_mat4x2.inl in Resources */,
-				FC0044BC14F5239200F4B97B /* type_mat4x3.inl in Resources */,
-				FC0044BD14F5239200F4B97B /* type_mat4x4.inl in Resources */,
-				FC0044BE14F5239200F4B97B /* type_vec.inl in Resources */,
-				FC0044BF14F5239200F4B97B /* type_vec1.inl in Resources */,
-				FC0044C014F5239200F4B97B /* type_vec2.inl in Resources */,
-				FC0044C114F5239200F4B97B /* type_vec3.inl in Resources */,
-				FC0044C214F5239200F4B97B /* type_vec4.inl in Resources */,
-				FC0044C314F5239200F4B97B /* half_float.inl in Resources */,
-				FC0044C414F5239200F4B97B /* matrix_access.inl in Resources */,
-				FC0044C514F5239200F4B97B /* matrix_inverse.inl in Resources */,
-				FC0044C614F5239200F4B97B /* matrix_transform.inl in Resources */,
-				FC0044C714F5239200F4B97B /* quaternion.inl in Resources */,
-				FC0044C914F5239200F4B97B /* type_precision.inl in Resources */,
-				FC0044CA14F5239200F4B97B /* type_ptr.inl in Resources */,
-				FC0044CB14F5239200F4B97B /* associated_min_max.inl in Resources */,
-				FC0044CC14F5239200F4B97B /* bit.inl in Resources */,
-				FC0044CD14F5239200F4B97B /* closest_point.inl in Resources */,
-				FC0044CE14F5239200F4B97B /* color_cast.inl in Resources */,
-				FC0044CF14F5239200F4B97B /* color_space.inl in Resources */,
-				FC0044D014F5239200F4B97B /* color_space_YCoCg.inl in Resources */,
-				FC0044D114F5239200F4B97B /* compatibility.inl in Resources */,
-				FC0044D214F5239200F4B97B /* component_wise.inl in Resources */,
-				FC0044D314F5239200F4B97B /* epsilon.inl in Resources */,
-				FC0044D414F5239200F4B97B /* euler_angles.inl in Resources */,
-				FC0044D514F5239200F4B97B /* extend.inl in Resources */,
-				FC0044D614F5239200F4B97B /* extented_min_max.inl in Resources */,
-				FC0044D714F5239200F4B97B /* fast_exponential.inl in Resources */,
-				FC0044D814F5239200F4B97B /* fast_square_root.inl in Resources */,
-				FC0044D914F5239200F4B97B /* fast_trigonometry.inl in Resources */,
-				FC0044DA14F5239200F4B97B /* gradient_paint.inl in Resources */,
-				FC0044DB14F5239200F4B97B /* handed_coordinate_space.inl in Resources */,
-				FC0044DC14F5239200F4B97B /* inertia.inl in Resources */,
-				FC0044DD14F5239200F4B97B /* int_10_10_10_2.inl in Resources */,
-				FC0044DE14F5239200F4B97B /* integer.inl in Resources */,
-				FC0044DF14F5239200F4B97B /* intersect.inl in Resources */,
-				FC0044E014F5239200F4B97B /* log_base.inl in Resources */,
-				FC0044E114F5239200F4B97B /* matrix_cross_product.inl in Resources */,
-				FC0044E214F5239200F4B97B /* matrix_interpolation.inl in Resources */,
-				FC0044E314F5239200F4B97B /* matrix_major_storage.inl in Resources */,
-				FC0044E414F5239200F4B97B /* matrix_operation.inl in Resources */,
-				FC0044E514F5239200F4B97B /* matrix_query.inl in Resources */,
-				FC0044E614F5239200F4B97B /* mixed_product.inl in Resources */,
-				FC0044E714F5239200F4B97B /* multiple.inl in Resources */,
-				FC0044E814F5239200F4B97B /* noise.inl in Resources */,
-				FC0044E914F5239200F4B97B /* norm.inl in Resources */,
-				FC0044EA14F5239200F4B97B /* normal.inl in Resources */,
-				FC0044EB14F5239200F4B97B /* normalize_dot.inl in Resources */,
-				FC0044EC14F5239200F4B97B /* number_precision.inl in Resources */,
-				FC0044ED14F5239200F4B97B /* ocl_type.inl in Resources */,
-				FC0044EE14F5239200F4B97B /* optimum_pow.inl in Resources */,
-				FC0044EF14F5239200F4B97B /* orthonormalize.inl in Resources */,
-				FC0044F014F5239200F4B97B /* perpendicular.inl in Resources */,
-				FC0044F114F5239200F4B97B /* polar_coordinates.inl in Resources */,
-				FC0044F214F5239200F4B97B /* projection.inl in Resources */,
-				FC0044F314F5239200F4B97B /* quaternion.inl in Resources */,
-				FC0044F414F5239200F4B97B /* random.inl in Resources */,
-				FC0044F514F5239200F4B97B /* raw_data.inl in Resources */,
-				FC0044F614F5239200F4B97B /* reciprocal.inl in Resources */,
-				FC0044F714F5239200F4B97B /* rotate_vector.inl in Resources */,
-				FC0044F814F5239200F4B97B /* simd_mat4.inl in Resources */,
-				FC0044F914F5239200F4B97B /* simd_vec4.inl in Resources */,
-				FC0044FA14F5239200F4B97B /* simplex.inl in Resources */,
-				FC0044FB14F5239200F4B97B /* spline.inl in Resources */,
-				FC0044FC14F5239200F4B97B /* std_based_type.inl in Resources */,
-				FC0044FD14F5239200F4B97B /* string_cast.inl in Resources */,
-				FC0044FE14F5239200F4B97B /* transform.inl in Resources */,
-				FC0044FF14F5239200F4B97B /* transform2.inl in Resources */,
-				FC00450014F5239200F4B97B /* ulp.inl in Resources */,
-				FC00450114F5239200F4B97B /* unsigned_int.inl in Resources */,
-				FC00450214F5239200F4B97B /* vec1.inl in Resources */,
-				FC00450314F5239200F4B97B /* vector_access.inl in Resources */,
-				FC00450414F5239200F4B97B /* vector_angle.inl in Resources */,
-				FC00450514F5239200F4B97B /* vector_query.inl in Resources */,
-				FC00450614F5239200F4B97B /* verbose_operator.inl in Resources */,
-				FC00450714F5239200F4B97B /* wrap.inl in Resources */,
-				FC852AAA14F52D830001E8C9 /* swizzle.inl in Resources */,
 				FC129DD215459B45007BD6BB /* CaptureDiscardItButton.png in Resources */,
 				FC129DD315459B45007BD6BB /* CaptureDiscardItButton@2x.png in Resources */,
 				FC129DD415459B45007BD6BB /* CapturePanelBackground.png in Resources */,
@@ -2370,31 +2135,6 @@
 				FC65C1BA14CED49E002B1B67 /* CodifyAppDelegate.m in Sources */,
 				FC10E9A214D117F8004B5EFE /* Project.m in Sources */,
 				FC10E9A614D11879004B5EFE /* EditorBuffer.m in Sources */,
-				FC10EA1114D154AF004B5EFE /* BasicTransform.vsh in Sources */,
-				FC10EA1214D154AF004B5EFE /* CircleShader.fsh in Sources */,
-				FC10EA1414D154AF004B5EFE /* CircleShaderNoStroke.fsh in Sources */,
-				FC10EA1614D154AF004B5EFE /* ColorTextureTransform.vsh in Sources */,
-				FC10EA1714D154AF004B5EFE /* ColorTransform.vsh in Sources */,
-				FC10EA1814D154AF004B5EFE /* FillColorTextureTransform.vsh in Sources */,
-				FC10EA1914D154AF004B5EFE /* FillColorTransform.vsh in Sources */,
-				FC10EA1A14D154AF004B5EFE /* LineRoundCapShader.fsh in Sources */,
-				FC10EA1C14D154AF004B5EFE /* LineShader.fsh in Sources */,
-				FC10EA1E14D154AF004B5EFE /* Mesh2DShader.fsh in Sources */,
-				FC10EA2014D154AF004B5EFE /* Mesh2DTexturedShader.fsh in Sources */,
-				FC10EA2214D154AF004B5EFE /* MeshFillColorShader.fsh in Sources */,
-				FC10EA2414D154AF004B5EFE /* MeshFillColorTextureShader.fsh in Sources */,
-				FC10EA2614D154AF004B5EFE /* PassThroughShader.fsh in Sources */,
-				FC10EA2814D154AF004B5EFE /* PassThroughShader.vsh in Sources */,
-				FC10EA2914D154AF004B5EFE /* RectShader.fsh in Sources */,
-				FC10EA2B14D154AF004B5EFE /* RectShaderNoSmooth.fsh in Sources */,
-				FC10EA2D14D154AF004B5EFE /* RectShaderNoStroke.fsh in Sources */,
-				FC10EA2F14D154AF004B5EFE /* RectShaderNoStrokeNoSmooth.fsh in Sources */,
-				FC10EA3114D154AF004B5EFE /* SimpleLineShader.fsh in Sources */,
-				FC10EA3314D154AF004B5EFE /* SpriteShader.fsh in Sources */,
-				FC10EA3514D154AF004B5EFE /* SpriteShaderNoTint.fsh in Sources */,
-				FC10EA3714D154AF004B5EFE /* SpriteShaderTintAlpha.fsh in Sources */,
-				FC10EA3914D154AF004B5EFE /* SpriteShaderTintRGB.fsh in Sources */,
-				FC10EA3B14D154AF004B5EFE /* TextShader.fsh in Sources */,
 				FCCF511E14F4E79300A9E63D /* SharedRenderer.m in Sources */,
 				FCCF512114F4E84C00A9E63D /* soundbuffer.m in Sources */,
 				FCCF512714F4E8BB00A9E63D /* DeviceCommands.m in Sources */,
