@@ -36,7 +36,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
     self = [super init];
     if( self )
     {
-        preloadScripts = [[NSMutableArray array] retain];
+        preloadScripts = [[NSMutableArray alloc] initWithCapacity:31];
         
         /*
         //Lua Socket        
@@ -51,8 +51,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
         */
         
         //Pre-load classes and sandbox lua files
-        [preloadScripts addObject:[SCRIPT_STRING("LuaSandbox") retain]];             
-        [preloadScripts addObject:[SCRIPT_STRING("Class") retain]];             
+        [preloadScripts addObject:SCRIPT_STRING("LuaSandbox")];
+        [preloadScripts addObject:SCRIPT_STRING("Class")];
         //luaSandbox = [[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LuaSandbox" ofType:@"lua"] usedEncoding:NULL error:NULL] retain];
         //luaClasses = [[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Class" ofType:@"lua"] usedEncoding:NULL error:NULL] retain];        
         
@@ -105,7 +105,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
         //Check here because the open source EditorBuffer doesnt have this message
         if ([buffer respondsToSelector:@selector(clearErrorMessage)])
         {
-            [buffer clearErrorMessages];
+            [buffer performSelector:@selector(clearErrorMessage)];
         }
         
         //Attempt to load this buffer into the Lua state
