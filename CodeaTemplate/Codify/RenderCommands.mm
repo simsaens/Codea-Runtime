@@ -37,7 +37,7 @@
 #import "SharedRenderer.h"
 #import "EAGLView.h"
 
-#include <Box2d/ConvexDecomposition/b2Polygon.h>
+#include <Box2D/ConvexDecomposition/b2Polygon.h>
 
 #ifdef __cplusplus
 extern "C" {
