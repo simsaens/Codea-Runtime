@@ -83,16 +83,10 @@ static void pushNSDictionary(lua_State* L, NSDictionary* dictionary)
     }
 }
 
-int Lrequest(lua_State* L)
-{
-    return 0;
-}
-
-
 //Synchronous (ish?) http get
 //Requires (url, successCallback, [failCallback], [params])
 //where params is a table like {"method":"HEAD", "headers":{things}, "data":"postdata", "useragent":etc}
-int Lget(lua_State* L)
+int Lrequest(lua_State* L)
 {
     int n = lua_gettop(L);
     
@@ -171,10 +165,10 @@ int Lget(lua_State* L)
         
         //This will try to make an image if iOS can from the given data, otherwise returns nil
         UIImage* image = [UIImage imageWithData:responseData];
-
-//        NSString* mimeType = [request.responseHeaders objectForKey:@"Content-Type"];
-//        BOOL isImage = [mimeType rangeOfString:@"image/png"].location != NSNotFound ||
-//                       [mimeType rangeOfString:@"image/jpeg"].location != NSNotFound;
+        
+        //        NSString* mimeType = [request.responseHeaders objectForKey:@"Content-Type"];
+        //        BOOL isImage = [mimeType rangeOfString:@"image/png"].location != NSNotFound ||
+        //                       [mimeType rangeOfString:@"image/jpeg"].location != NSNotFound;
         
         
         lua_rawgeti(L,LUA_REGISTRYINDEX,successCallback); //push the callback to the top of the stack
@@ -198,7 +192,7 @@ int Lget(lua_State* L)
         
         //TODO: extract response headers and push as a table
         
-         [[LuaState sharedInstance] printErrors:lua_pcall(L, 3, 0, 0)];
+        [[LuaState sharedInstance] printErrors:lua_pcall(L, 3, 0, 0)];
         
     }];
     
@@ -215,15 +209,20 @@ int Lget(lua_State* L)
             
             lua_pushstring(L, [error cStringUsingEncoding:NSUTF8StringEncoding]);
             
-             [[LuaState sharedInstance] printErrors:lua_pcall(L, 1, 0, 0)];
-
+            [[LuaState sharedInstance] printErrors:lua_pcall(L, 1, 0, 0)];
+            
         }];
     }
     
     
-    [request startAsynchronous];    
+    [request startAsynchronous];      
     
     return 0;
+}
+
+int Lget(lua_State* L)
+{
+    return Lrequest(L);
 }
 
 int Lpost(lua_State* L)
@@ -235,7 +234,7 @@ static const luaL_reg R[] =
 {    
 	{ "get",        Lget		},
 	//{ "post",       Lpost		},
-	//{ "request",	Lrequest	},
+	{ "request",	Lrequest	},
         
 	{ NULL,		NULL		}
 };

@@ -192,6 +192,7 @@
     elapsedTime = 0;    
     [[LuaState sharedInstance] setGlobalNumber:elapsedTime withName:@"ElapsedTime"];
     [[LuaState sharedInstance] setGlobalNumber:0.0 withName:@"DeltaTime"];                   
+    [[LuaState sharedInstance] setGlobalNumber:[UIScreen mainScreen].scale withName:@"ContentScaleFactor"];                       
     
     //Push touch state vars
     [[LuaState sharedInstance] setGlobalInteger:TOUCH_STATE_BEGAN withName:@"BEGAN"];

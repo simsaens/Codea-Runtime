@@ -45,8 +45,15 @@ extern "C" {
     int saveProjectInfo(lua_State *L);
     int readProjectInfo(lua_State *L);    
     
-    int saveDocumentsImage(lua_State *L);
-    int saveProjectImage(lua_State *L);
+//    int saveDocumentsImage(lua_State *L);
+//    int saveProjectImage(lua_State *L);
+//    int readDocumentsImage(lua_State *L);
+//    int readProjectImage(lua_State *L);
+//    int readDocumentsImages(lua_State *L);    
+//    int readProjectImages(lua_State *L);
+    int saveImage(lua_State *L);
+    int readImage(lua_State *L);
+    int spriteList(lua_State *L);
     
     void removeLocalDataForPrefix(NSString* name);
     void setLocalDataPrefix(NSString* name);

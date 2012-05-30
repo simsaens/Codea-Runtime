@@ -51,7 +51,7 @@ extern "C" {
     
     LUALIB_API int (luaopen_image) (lua_State *L);
     image_type *checkimage(lua_State *L, int i);
-    image_type *pushimage(lua_State *L, unsigned char* data, size_t width, size_t height, boolean_t premultipliedAlpha);
+    image_type *pushimage(lua_State *L, unsigned char* data, size_t width, size_t height, boolean_t premultipliedAlpha, float scale);
     
     //Create an image_type on the lua stack and draw the UIImage into it as premultiplied RGBA
     image_type* pushUIImage(lua_State* L, UIImage* image);

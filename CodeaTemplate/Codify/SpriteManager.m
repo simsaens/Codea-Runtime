@@ -55,6 +55,23 @@
     return [self.files count];
 }
 
+- (NSString*) retinaSpritePathAtIndex:(NSUInteger)index
+{
+    NSString *filePath = [self.files objectAtIndex:index];
+    
+    NSString *base = [filePath stringByDeletingPathExtension];
+    NSString *ext = [filePath pathExtension];
+        
+    return [[base stringByAppendingString:@"@2x"] stringByAppendingPathExtension:ext];
+}
+
+- (NSString*) spritePathAtIndex:(NSUInteger)index
+{
+    NSString *filePath = [self.files objectAtIndex:index];
+    
+    return filePath;
+}
+
 - (UIImage*) spriteImageAtIndex:(NSUInteger)index
 {
     NSString *filePath = [self.files objectAtIndex:index];
@@ -78,6 +95,68 @@
     NSString *spriteName = [self fileNameAtIndex:index];
     
     return [spriteName stringByDeletingPathExtension];
+}
+
+- (BOOL) deleteSpriteAtIndex:(NSUInteger)index andReload:(BOOL)reload
+{
+    NSString *path = [self spritePathAtIndex:index];
+    NSString *retinaPath = [self retinaSpritePathAtIndex:index];
+    
+    BOOL noErr = YES;
+    
+    if( [[NSFileManager defaultManager] fileExistsAtPath:path] ) 
+    {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+        
+        if( error )
+        {
+            DBLog(@"EditableSpriteGridController: Error deleting sprite(s) ");
+            noErr = NO;
+        }
+    }    
+    
+    if( [[NSFileManager defaultManager] fileExistsAtPath:retinaPath] ) 
+    {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:retinaPath error:&error];
+        
+        if( error )
+        {
+            DBLog(@"EditableSpriteGridController: Error deleting sprite(s) ");
+            noErr = NO;            
+        }
+    }        
+    
+    if( reload )
+        [self reloadFilesFromBundlePath];
+    
+    return noErr;
+}
+
+- (BOOL) deleteSpriteAtIndex:(NSUInteger)index
+{
+    return [self deleteSpriteAtIndex:index andReload:YES];
+}
+
+- (BOOL) deleteSpritesAtIndices:(NSIndexSet*)set
+{
+    BOOL noErr = YES;
+    
+    NSUInteger idx = [set firstIndex];
+    while( idx != NSNotFound ) 
+    {
+        if( ![self deleteSpriteAtIndex:idx andReload:NO] )
+        {
+            noErr = NO;
+        }
+        
+        idx = [set indexGreaterThanIndex:idx];
+    }
+
+    [self reloadFilesFromBundlePath];    
+    
+    return noErr;
 }
 
 @end
@@ -190,13 +269,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
             
             if( [[NSFileManager defaultManager] fileExistsAtPath:[pack.bundlePath stringByAppendingPathComponent:filePath]] == NO )
             {
-                DBLog(@"Invalid Sprite specified");                 
+                DBLog(@"Invalid Sprite specified: %@", filePath);                 
                 spritePath = nil;
             }
         }
         else
         {
-            DBLog(@"Invalid SpritePack specified");
+            DBLog(@"Invalid SpritePack specified: %@", [components objectAtIndex:0]);
         }        
     }
     else
@@ -228,13 +307,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
             
             if( [[NSFileManager defaultManager] fileExistsAtPath:spritePath] == NO )
             {
-                DBLog(@"Invalid Sprite specified");                
+                DBLog(@"Invalid Sprite specified: %@", filePath);                
                 spritePath = nil;
             }
         }
         else
         {
-            DBLog(@"Invalid SpritePack specified");
+            DBLog(@"Invalid SpritePack specified: %@", [components objectAtIndex:0]);
         }
 
     }
@@ -262,31 +341,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
         
         if( pack )
         {   
+            NSString *filePath = [[components objectAtIndex:1] stringByAppendingPathExtension:@"png"];           
+            spritePath = [pack.bundlePath stringByAppendingPathComponent:filePath];                
+            
             if (pack.userPack)
             {
-                NSString *filePath = [[components objectAtIndex:1] stringByAppendingPathExtension:@"png"];            
-                spritePath = [pack.bundlePath stringByAppendingPathComponent:filePath];           
-                *relative = YES;
-                
-                if( [[NSFileManager defaultManager] fileExistsAtPath:[pack.bundlePath stringByAppendingPathComponent:filePath]] == NO )
-                {
-                    DBLog(@"Invalid Sprite specified");                
-                    spritePath = nil;
-                }
-            }
-            else
-            {
-                //NSString *packPath = [[components objectAtIndex:0] stringByAppendingPathExtension:@"spritepack"];
-                NSString *filePath = [[components objectAtIndex:1] stringByAppendingPathExtension:@"png"];           
-                spritePath = [pack.bundlePath stringByAppendingPathComponent:filePath];                
                 *relative = NO;
-                
-                if( [[NSFileManager defaultManager] fileExistsAtPath:spritePath] == NO )
-                {
-                    DBLog(@"Invalid Sprite specified");                
-                    spritePath = nil;
-                }                
-            }                        
+                spritePath = [pack.bundlePath stringByAppendingPathComponent:filePath];
+            }
+            else 
+            {
+                *relative = YES;
+                spritePath = [[[components objectAtIndex:0] stringByAppendingPathExtension:@"spritepack"] stringByAppendingPathComponent:filePath];
+            }
+                        
+            if( [[NSFileManager defaultManager] fileExistsAtPath:[pack.bundlePath stringByAppendingPathComponent:filePath]] == NO )
+            {
+                DBLog(@"Invalid Sprite specified");                
+                spritePath = nil;
+            }                            
         }
         else
         {
@@ -307,8 +380,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
     return [paths objectAtIndex:0];        
 }
 
-- (NSArray*) loadSpritePacksInPath:(NSString*)path
+- (SpritePack*) spritePackFromPath:(NSString*)path
 {
+    return [SpritePack bundleWithPath:path validFileTypes:[NSArray arrayWithObjects:@"png", @"jpg", nil]];
+}
+
+- (NSMutableArray*) loadSpritePacksInPath:(NSString*)path
+{        
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
     NSMutableArray *packs = [NSMutableArray arrayWithCapacity:[contents count]];
     
@@ -320,7 +398,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
         {        
             NSString *packPath = [path stringByAppendingPathComponent:folder];
             
-            SpritePack *pack = [SpritePack bundleWithPath:packPath validFileTypes:[NSArray arrayWithObject:@"png"]];
+            SpritePack *pack = [self spritePackFromPath:packPath];
             
             [packs addObject:pack];
         }
@@ -339,18 +417,49 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
     return includedPacksCache;
 }
 
+void createDropboxPath()
+{
+    // Attempt to create dropbox directory if it doesn't exist
+    if( ![[NSFileManager defaultManager] fileExistsAtPath:getDropboxPath()] )
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:getDropboxPath() withIntermediateDirectories:YES attributes:nil error:NULL];                                        
+    }
+}
+
+NSString* getDropboxPath()
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    return [documentsDirectoryPath stringByAppendingPathComponent:@"Dropbox.spritepack"];    
+}
+
 - (NSArray*) userSpritePacks
 {
     if( userPacksCache == nil )
     {
-        userPacksCache = [[self loadSpritePacksInPath:[self documentsFolder]] retain];                        
+        createDropboxPath();
+                
+        //Load any .spritepack folders sitting in Documents
+        userPacksCache = [[self loadSpritePacksInPath:[self documentsFolder]] retain];                                
         
-        //TEMPORARY DISABLE
-        /*
-        SpritePack *globalPack = [SpritePack bundleWithPath:getDocumentsImagesPath() validFileTypes:[NSArray arrayWithObject:@"png"]];        
-        globalPack.userPack = YES;
-        [(NSMutableArray*)userPacksCache addObject:globalPack];        
-        */
+        //Load Documents/* itself, as a sprite pack
+        SpritePack* documents = [self spritePackFromPath:[self documentsFolder]];
+        documents.userPack = YES;
+        documents.info = [NSDictionary dictionaryWithObjectsAndKeys:@"Documents", @"Name", @"You", @"Author", @"SpritePackDocuments.png", @"Icon", nil];
+        
+        //Place documents spritepack at the start of the list
+        [userPacksCache insertObject:documents atIndex:0];   
+        
+        //Configure the Dropbox sprite pack
+        for (SpritePack* pack in userPacksCache)
+        {
+            if ([pack.name isEqualToString:@"Dropbox"])
+            {
+                SpritePack *dropboxPack = pack;
+                dropboxPack.userPack = YES;
+                dropboxPack.info = [NSDictionary dictionaryWithObjectsAndKeys:@"Dropbox", @"Name", @"You", @"Author", @"SpritePackDropbox.png", @"Icon", nil];                
+            }
+        }        
     }
     
     return userPacksCache;    
@@ -358,8 +467,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SpriteManager);
 
 - (NSArray*) availableSpritePacks
 {
-    //TODO: Return both user and included sprite packs
-    return self.includedSpritePacks; //[self.includedSpritePacks arrayByAddingObjectsFromArray:self.userSpritePacks];
+    //Return both the user sprite packs and the included ones
+    return [self.userSpritePacks arrayByAddingObjectsFromArray:self.includedSpritePacks];
 }
 
 @end

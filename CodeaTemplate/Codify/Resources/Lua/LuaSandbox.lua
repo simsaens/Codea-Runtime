@@ -22,9 +22,6 @@
 
 arg=nil
 
-rawget=nil
-rawset=nil
-rawequal=nil
 setfenv=nil
 getfenv=nil
 string.dump=nil
