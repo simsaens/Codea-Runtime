@@ -102,6 +102,18 @@
 
 #pragma mark - Internal Initialization
 
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	
+	if(self){
+		supportedOrientations = [[NSMutableSet alloc] initWithCapacity:4];
+		[self addSupportedOrientation:ORIENTATION_ANY];
+	}
+	
+	return self;
+}
+
 - (void) setup
 {
     self.showButtons = NO;
@@ -116,8 +128,6 @@
     
     renderManager = [[RenderManager alloc] init];
     physicsManager = [[PhysicsManager alloc] init];
-    supportedOrientations = [[NSMutableSet set] retain];
-    [self addSupportedOrientation:ORIENTATION_ANY];
     
     if (!aContext)
         NSLog(@"Failed to create ES context");
@@ -479,9 +489,7 @@
 #pragma mark - View preparation
 
 - (void) prepareViewForDisplay
-{    
-    [self addSupportedOrientation:ORIENTATION_ANY];     
-    
+{
     //Do some basic GL setup    
     [self startAnimation];           
     [self initialDrawSetup];          
@@ -1139,7 +1147,7 @@
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationLandscapeRight]];                                                
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationPortrait]];            
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationPortraitUpsideDown]];                                    
-            break;       
+            break;
             
         default: //Default to landscape left and right
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationLandscapeLeft]];                                    

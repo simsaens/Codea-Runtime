@@ -437,7 +437,7 @@ UIImage* createUIImageFromImage(image_type* image)
     UIImage *newImage = [UIImage imageWithCGImage:imageRef];
     CGDataProviderRelease(provider);
     CGImageRelease(imageRef);
-    CGColorSpaceRelease(colorSpaceRef);    
+	CGColorSpaceRelease(colorSpaceRef);
     
     // Flip image    
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:newImage];        
