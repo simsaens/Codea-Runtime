@@ -33,11 +33,16 @@
 - (void) reloadFilesFromBundlePath
 {
     NSArray *bundleContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:bundlePath error:NULL];        
-        
+       
+    [name release];
     name = [[[bundlePath lastPathComponent] stringByDeletingPathExtension] retain];
+    [files release];
     files = [[NSMutableArray arrayWithCapacity:[bundleContents count]] retain];
     
-    info = [self defaultInfoDictionary];
+    if (info == nil)
+    {
+        self.info = [self defaultInfoDictionary];    
+    }    
     
     for( NSString *file in bundleContents )
     {
@@ -49,11 +54,9 @@
         
         if( [file isEqualToString:@"Info.plist"] )
         {
-            info = [NSMutableDictionary dictionaryWithContentsOfFile:[bundlePath stringByAppendingPathComponent:file]];
+            self.info = [NSMutableDictionary dictionaryWithContentsOfFile:[bundlePath stringByAppendingPathComponent:file]];
         }
     }
-    
-    [info retain];    
 }
 
 - (BOOL) isFileValid:(NSString*)path

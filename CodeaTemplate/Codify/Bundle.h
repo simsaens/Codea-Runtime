@@ -32,7 +32,7 @@
 
 @property (nonatomic, readonly) NSString            *bundlePath;
 @property (nonatomic, readonly) NSArray             *files;
-@property (nonatomic, readonly) NSMutableDictionary *info;
+@property (nonatomic, retain) NSMutableDictionary *info;
 @property (nonatomic, readonly) NSString            *name;
 
 + (id) bundleWithPath:(NSString*)path validFileTypes:(NSArray*)validExt;

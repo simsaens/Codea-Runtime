@@ -47,7 +47,7 @@ void updateImageTextureIfRequired(image_type* image)
         
         image->texture = [[CCTexture2D alloc] initWithData:image->data pixelFormat:kCCTexture2DPixelFormat_RGBA8888 pixelsWide:image->rawWidth pixelsHigh:image->rawHeight contentSize:CGSizeMake(image->rawWidth, image->rawHeight)];
         
-        image->texture.scale = [SharedRenderer renderer].glView.contentScaleFactor;
+        image->texture.scale = image->scaleFactor; //[SharedRenderer renderer].glView.contentScaleFactor;
 
         image->dataChanged = NO;        
     }
@@ -307,7 +307,7 @@ static image_type* Pnew( lua_State *L )
     return v;
 }
 
-image_type* pushimage(lua_State *L, unsigned char* data, size_t width, size_t height, boolean_t premultipliedAlpha)
+image_type* pushimage(lua_State *L, unsigned char* data, size_t width, size_t height, boolean_t premultipliedAlpha, float scale)
 {
     image_type *v=Pnew(L);
     
@@ -315,7 +315,7 @@ image_type* pushimage(lua_State *L, unsigned char* data, size_t width, size_t he
     v->rawHeight = height;
     v->scaledWidth = width;
     v->scaledHeight = height;
-    v->scaleFactor = 1;
+    v->scaleFactor = scale;
     v->premultiplied = premultipliedAlpha;
     allocateData(v);
     
@@ -384,7 +384,7 @@ image_type* pushUIImage(lua_State* L, UIImage* image)
 	size_t width = CGImageGetWidth(imageRef);
 	size_t height = CGImageGetHeight(imageRef);
 
-    image_type* luaImage = pushimage(L, NULL, width, height, 1);
+    image_type* luaImage = pushimage(L, NULL, width, height, 1, image.scale);
     if (!luaImage) 
     {
         NSLog(@"Error creating lua image");

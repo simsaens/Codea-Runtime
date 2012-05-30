@@ -177,7 +177,7 @@
         [unsortedBuffers addObject:buffer];
         [unsortedBufferNames addObject:[[filePath lastPathComponent] stringByDeletingPathExtension]];
         
-        DBLog(@"Buffer = \n%@", buffer.text);
+        //DBLog(@"Buffer = \n%@", buffer.text);
         
         [buffer release];
     }

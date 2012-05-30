@@ -25,8 +25,13 @@
 #import <Foundation/NSUserDefaults.h>
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
+
 #import "image.h"
 #import "lauxlib.h"
+#import "SpriteManager.h"
+#import "UIImage+Resize.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 #define PREFIX_FORMAT @"%@_DATA"
 
@@ -397,7 +402,14 @@ NSString* getDocumentsImagesPath()
 
 NSString* getProjectImagesPath()
 {
-    return currentProjectDataPath;
+    return [currentProjectDataPath stringByDeletingLastPathComponent];
+}
+
+NSString* getDropboxImagesPath()
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    return [documentsDirectoryPath stringByAppendingPathComponent:@"Dropbox.spritepack"];
 }
 
 UIImage* createUIImageFromImage(image_type* image)
@@ -423,18 +435,73 @@ UIImage* createUIImageFromImage(image_type* image)
     /*I get the current dimensions displayed here */
     //    NSLog(@"Created image with width=%d, height: %d", (int)CGImageGetWidth(imageRef), (int)CGImageGetHeight(imageRef) );
     UIImage *newImage = [UIImage imageWithCGImage:imageRef];
-    
-    //    NSLog(@"resultImg width:%f, height:%f", newImage.size.width,newImage.size.height);
-    
     CGDataProviderRelease(provider);
     CGImageRelease(imageRef);
+	CGColorSpaceRelease(colorSpaceRef);
     
-    return newImage;    
+    // Flip image    
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:newImage];        
+    UIGraphicsBeginImageContext(tempImageView.frame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, tempImageView.frame.size.height);
+    CGContextConcatCTM(context, flipVertical);
+    [tempImageView.layer renderInContext:context];        
+    UIImage *flippedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [tempImageView release];
+    
+    return flippedImage;    
 }
 
-int saveImage(lua_State *L, NSString* path)
+int readImage(lua_State *L)
 {
     int n = lua_gettop(L);
+    
+    if(n != 1 )
+    {
+        luaL_error(L, "Expected one argument");
+        return 0;
+    }
+    
+    size_t keyLen = 0;
+    const char* key = luaL_checklstring(L, 1, &keyLen);
+    if(has_nulls(key, keyLen))
+    {
+        luaL_error(L, "Key cannot have null characters");
+        return 0;
+    }
+    
+    NSString* nsKey = [NSString stringWithCString:key encoding:NSUTF8StringEncoding];
+    
+    BOOL relative = NO;
+    NSString* file = [[SpriteManager sharedInstance] spriteFileFromString:nsKey relative:&relative];
+    
+    if (file)
+    {
+        UIImage* uiImage = nil;
+        if (relative)
+        {
+            uiImage = [UIImage imageNamed:[@"SpritePacks" stringByAppendingPathComponent:file]];
+        }
+        else 
+        {
+            uiImage = [UIImage imageWithContentsOfFile:file];
+        }
+    
+        if (uiImage)
+        {
+            pushUIImage(L, uiImage);
+            return 1;
+        }
+    }
+        
+    return 0;
+}
+
+int saveImage(lua_State *L)
+{
+    int n = lua_gettop(L);
+
     if(n != 2)
     {
         luaL_error(L, "Expected two arguments");
@@ -446,37 +513,152 @@ int saveImage(lua_State *L, NSString* path)
     
     if(has_nulls(key, keyLen))
     {
-        luaL_error(L, "key cannot have null characters");
+        luaL_error(L, "Key cannot have null characters");
         return 0;
     }
     if (keyLen == 0) 
     {
-        luaL_error(L, "key cannot be the empty string");
+        luaL_error(L, "Key cannot be the empty string");
     }    
     
     NSString* nsKey = [NSString stringWithCString:key encoding:NSUTF8StringEncoding];
-    
-    image_type* image = checkimage(L, 2);
-    
-    if (nsKey && image)
+            
+    if (nsKey)
     {
-        NSString* file = [[path stringByAppendingPathComponent:nsKey] stringByAppendingPathExtension:@"png"];               
-        UIImage* sourceImage = createUIImageFromImage(image);
-        UIImage* flippedImage = [UIImage imageWithCGImage:sourceImage.CGImage 
-                                                    scale:1.0 orientation: UIImageOrientationUpMirrored];        
-        [UIImagePNGRepresentation(flippedImage) writeToFile:file atomically:YES];
+        NSArray* components = [nsKey componentsSeparatedByString:@":"];
+        if ([components count] != 2)
+        {
+            luaL_error(L, "Invalid image key");
+            return 0;
+        }
+        NSString* spritePackName = [components objectAtIndex:0];
+        NSString* spriteName = [components objectAtIndex:1];
+        NSString* path = nil;
+        
+        if ([spritePackName isEqualToString:@"Documents"])
+        {
+            path = getDocumentsImagesPath();
+        }
+        else if ([spritePackName isEqualToString:@"Project"])
+        {
+            path = getProjectImagesPath();
+        }
+        else if ([spritePackName isEqualToString:@"Dropbox"])
+        {
+            path = getDropboxImagesPath();
+        }
+        else 
+        {
+            // Cannot write to any other sprite packs (read only, or don't exist)
+            luaL_error(L, "Invalid sprite pack name");
+            return 0;
+        }
+
+        // Check if on retina ipad and save out both @2x and regular file        
+        NSString* retinaFile = nil;
+        NSString* file = nil;
+        
+        if( [UIScreen mainScreen].scale == 2 )
+        {
+            retinaFile = [[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@@2x",spriteName]] stringByAppendingPathExtension:@"png"];                                   
+        }
+        
+        file = [[path stringByAppendingPathComponent:spriteName] stringByAppendingPathExtension:@"png"];                       
+        
+        // If nil is specified, delete image at path
+        if (lua_isnil(L, 2))
+        {
+            if ([[NSFileManager defaultManager] fileExistsAtPath:retinaFile])
+            {
+                //TODO: make checks to ensure there is no funny business going on in the file path
+                [[NSFileManager defaultManager] removeItemAtPath:retinaFile error:NULL];                            
+            }
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:file])
+            {
+                //TODO: make checks to ensure there is no funny business going on in the file path
+                [[NSFileManager defaultManager] removeItemAtPath:file error:NULL];                            
+            }                                   
+        }
+        else
+        {        
+            image_type* image = checkimage(L, 2);        
+            UIImage* sourceImage = createUIImageFromImage(image);
+    //        UIImage* flippedImage = [UIImage imageWithCGImage:sourceImage.CGImage 
+    //                                                    scale:1.0 orientation: UIImageOrientationUpMirrored];        
+            
+            if( image->scaleFactor == 2 && retinaFile )
+            {
+                [UIImagePNGRepresentation(sourceImage) writeToFile:retinaFile atomically:YES];            
+                
+                //Resize the image and write it out as the regular file
+                sourceImage = [UIImage imageWithImage:sourceImage 
+                                         scaledToSize:CGSizeMake(sourceImage.size.width/2, 
+                                                                 sourceImage.size.height/2) 
+                                          scaleFactor:1.0];
+            }
+            
+            [UIImagePNGRepresentation(sourceImage) writeToFile:file atomically:YES];        
+        }
     }
     
     return 0;    
 }
 
-int saveDocumentsImage(lua_State *L)
+int spriteList(lua_State *L)
 {
-    return saveImage(L, getDocumentsImagesPath());
+    int n = lua_gettop(L);
+    
+    if(n == 1)
+    {
+        // TODO: return list of image names for the path in a table  
+                
+        NSString* spritePackName = [NSString stringWithUTF8String:luaL_checkstring(L, 1)];
+        
+        NSArray* spritePacks = [SpriteManager sharedInstance].availableSpritePacks;
+        SpritePack* spritePack = nil;
+        for (SpritePack* pack in spritePacks)
+        {
+            if ([pack.name isEqualToString:spritePackName])
+            {
+                spritePack = pack;
+                break;
+            }
+        }
+        
+        if (spritePack)
+        {
+            [spritePack reloadFilesFromBundlePath];
+            
+            lua_newtable(L);
+            int index = 1;
+            for (NSString* filename in spritePack.files)
+            {
+                if ([[filename pathExtension] isEqualToString:@"png"])
+                {
+                    NSString* spritePath = [[filename lastPathComponent] stringByDeletingPathExtension];                
+                    lua_pushstring(L, [spritePath UTF8String]);
+                    lua_rawseti(L, -2, index);
+                    index++;                
+                }
+            }                    
+        }
+        else 
+        {
+            luaL_error(L, "Invalid sprite pack name");
+            return 0;
+        }        
+        
+        return 1;
+    }
+    else 
+    {
+        luaL_error(L, "Expected one argument");
+        return 0;        
+    }
 }
 
-int saveProjectImage(lua_State *L)
-{
-    return saveImage(L, getProjectImagesPath());
-}
+#pragma mark Code
+
+
 

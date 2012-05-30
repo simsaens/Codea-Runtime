@@ -247,7 +247,7 @@
         NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
     }    
     
-    NSLog(@"ScreenCapture: Created Framebuffer (%d x %d)", renderBufferWidth, renderBufferHeight);
+    DBLog(@"SCREENCAPTURE: Created Framebuffer (%d x %d)", renderBufferWidth, renderBufferHeight);
     
     //  Create a new CVOpenGLESTexture cache
     CVReturn err = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, glView.context, NULL, &textureCache);
@@ -360,7 +360,7 @@
 	int status = videoWriter.status;
 	while (status == AVAssetWriterStatusUnknown) 
     {
-		DBLog(@"Waiting...");
+		DBLog(@"SCREENCAPTURE: Waiting...");
 		[NSThread sleepForTimeInterval:0.5f];
 		status = videoWriter.status;
 	}
@@ -379,7 +379,7 @@
 		NSString *outputPath = [[NSString alloc] initWithFormat:@"%@/%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0], @"output.mp4"];
 		NSURL *outputURL = [[NSURL alloc] initFileURLWithPath:outputPath];
 		
-		DBLog(@"Completed recording, file is stored at:  %@", outputURL);
+		DBLog(@"SCREENCAPTURE: Completed recording, file is stored at:  %@", outputURL);
 		if ([delegateObj respondsToSelector:@selector(recordingFinished:)]) 
         {
 			[delegateObj performSelectorOnMainThread:@selector(recordingFinished:) withObject:(success ? outputURL : nil) waitUntilDone:YES];

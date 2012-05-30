@@ -22,7 +22,7 @@
 #import "PhysicsManager.h"
 
 #include <Box2d.h>
-#include <Box2D/ConvexDecomposition/b2Polygon.h>
+#include <Box2d/ConvexDecomposition/b2Polygon.h>
 
 #ifdef __cplusplus
 extern "C" {

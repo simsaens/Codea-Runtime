@@ -102,6 +102,18 @@
 
 #pragma mark - Internal Initialization
 
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	
+	if(self){
+		supportedOrientations = [[NSMutableSet alloc] initWithCapacity:4];
+		[self addSupportedOrientation:ORIENTATION_ANY];
+	}
+	
+	return self;
+}
+
 - (void) setup
 {
     self.showButtons = NO;
@@ -116,8 +128,6 @@
     
     renderManager = [[RenderManager alloc] init];
     physicsManager = [[PhysicsManager alloc] init];
-    supportedOrientations = [[NSMutableSet set] retain];
-    [self addSupportedOrientation:ORIENTATION_ANY];
     
     if (!aContext)
         NSLog(@"Failed to create ES context");
@@ -192,6 +202,7 @@
     elapsedTime = 0;    
     [[LuaState sharedInstance] setGlobalNumber:elapsedTime withName:@"ElapsedTime"];
     [[LuaState sharedInstance] setGlobalNumber:0.0 withName:@"DeltaTime"];                   
+    [[LuaState sharedInstance] setGlobalNumber:[UIScreen mainScreen].scale withName:@"ContentScaleFactor"];                       
     
     //Push touch state vars
     [[LuaState sharedInstance] setGlobalInteger:TOUCH_STATE_BEGAN withName:@"BEGAN"];
@@ -478,9 +489,7 @@
 #pragma mark - View preparation
 
 - (void) prepareViewForDisplay
-{    
-    [self addSupportedOrientation:ORIENTATION_ANY];     
-    
+{
     //Do some basic GL setup    
     [self startAnimation];           
     [self initialDrawSetup];          
@@ -1138,7 +1147,7 @@
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationLandscapeRight]];                                                
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationPortrait]];            
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationPortraitUpsideDown]];                                    
-            break;       
+            break;
             
         default: //Default to landscape left and right
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationLandscapeLeft]];                                    

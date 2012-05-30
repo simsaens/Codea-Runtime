@@ -650,12 +650,20 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(LuaState);
     LuaRegFunc(saveGlobalData);
     LuaRegFunc(readProjectInfo);
     LuaRegFunc(saveProjectInfo);
-    LuaRegFunc(saveDocumentsImage);
-    LuaRegFunc(saveProjectImage);
+//    LuaRegFunc(saveDocumentsImage);
+//    LuaRegFunc(saveProjectImage);
+//    LuaRegFunc(readDocumentsImage);
+//    LuaRegFunc(readProjectImage);
+//    LuaRegFunc(readDocumentsImages);
+//    LuaRegFunc(readProjectImages);
+    LuaRegFunc(saveImage);
+    LuaRegFunc(readImage);
+    LuaRegFunc(spriteList);
     
     //OS Commands
     LuaRegFunc(openURL);    
 
+    
 //    //Physics Commands
 //    LuaRegFunc(setPhysicsIterations);
 //    LuaRegFunc(pausePhysics);
@@ -797,8 +805,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(LuaState);
     LuaDudFunc(saveGlobalData);
     LuaRegFunc(readProjectInfo);
     LuaDudFunc(saveProjectInfo);      
-    LuaDudFunc(saveDocumentsImage);
-    LuaDudFunc(saveProjectImage);
+//    LuaDudFunc(saveDocumentsImage);
+//    LuaDudFunc(saveProjectImage);
+//    LuaDudFunc(readDocumentsImage);
+//    LuaDudFunc(readProjectImage);
+//    LuaDudFunc(readDocumentsImages);
+//    LuaDudFunc(readProjectImages);
+    LuaDudFunc(saveImage);
+    LuaDudFunc(readImage);
+    LuaDudFunc(spriteList);
+
+    
         
     //OS Commands
     LuaDudFunc(openURL);        

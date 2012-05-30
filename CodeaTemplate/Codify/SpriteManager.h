@@ -24,6 +24,9 @@
 #import "Bundle.h"
 #import "CCTexture2D.h"
 
+NSString* getDropboxPath();
+void createDropboxPath();
+
 @interface SpritePack : Bundle
 {
     BOOL userPack;
@@ -32,6 +35,9 @@
 - (NSUInteger) spriteCount;
 - (UIImage*) spriteImageAtIndex:(NSUInteger)index;
 - (NSString*) spriteNameAtIndex:(NSUInteger)index;
+- (NSString*) spritePathAtIndex:(NSUInteger)index;
+- (BOOL) deleteSpriteAtIndex:(NSUInteger)index;
+- (BOOL) deleteSpritesAtIndices:(NSIndexSet*)set;
 
 @property (nonatomic, assign) BOOL userPack;
 
@@ -40,7 +46,7 @@
 @interface SpriteManager : NSObject
 {
     NSArray *includedPacksCache;
-    NSArray *userPacksCache;    
+    NSMutableArray *userPacksCache;    
     
     NSMutableDictionary *allPacks;
 }
