@@ -570,6 +570,10 @@
     recordingTimeLabel.frame = CGRectMake(20, 20, 74, 18);
     recordingTimeLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
     
+    //Create keyboard input view
+    keyboardInputView = [[KeyboardInputView alloc] init];
+    [self.view addSubview:keyboardInputView];
+    
     keyboardInputView.delegate = self;
 }
 

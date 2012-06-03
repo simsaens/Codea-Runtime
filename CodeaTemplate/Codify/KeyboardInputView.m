@@ -41,6 +41,8 @@
     hiddenTextView.delegate = self;
     
     [self addSubview:hiddenTextView];
+    
+    self.hidden = YES;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -63,6 +65,17 @@
     }
     
     return self;    
+}
+
+- (id) init
+{
+    self = [super initWithFrame:CGRectMake(0, 0, 274, 60)];
+    if( self )
+    {
+        [self setup];
+    }
+    
+    return self;
 }
     
 - (void)dealloc 
