@@ -81,3 +81,9 @@ Guidelines for app developers using the Codea Runtime Library to produce apps fo
 
 + *Company, Product, or Service Name:* You may not use or register Codea, Two Lives Left, or any other Two Lives Left-owned trademark as part of a company name, product name, trade name or service name. This includes Two Lives Left-owned graphic symbols, logos and icons.
 + *Endorsement:* You may not use Codea, Two Lives Left, or any other Two Lives Left-owned tradmarks in a manner that would imply Two Lives Left's endorsement of a third party product or service.
+
+**Marketing Graphics for Use in Your Products**
+
++ You may use the following graphical elements in your products.
+  + [Made with Codea (White)](http://twolivesleft.com/Codea/MadeWithCodea-White.png)
+  + [Made with Codea (Black)](http://twolivesleft.com/Codea/MadeWithCodea-Black.png)
