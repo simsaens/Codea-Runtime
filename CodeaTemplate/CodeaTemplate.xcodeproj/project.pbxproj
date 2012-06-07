@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB7123DE1580388500970405 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7123DD1580388500970405 /* Icon-72@2x.png */; };
+		DB7123E11580388900970405 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7123E01580388900970405 /* Icon-72.png */; };
+		DB7123E31580389000970405 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7123E21580389000970405 /* Default-Landscape@2x~ipad.png */; };
+		DB7123E51580389400970405 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7123E41580389400970405 /* Default-Landscape~ipad.png */; };
+		DB7123E71580389900970405 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7123E61580389900970405 /* Default-Portrait@2x~ipad.png */; };
+		DB7123E91580389D00970405 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7123E81580389D00970405 /* Default-Portrait~ipad.png */; };
 		FC10E9A214D117F8004B5EFE /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9A114D117F8004B5EFE /* Project.m */; };
 		FC10E9A614D11879004B5EFE /* EditorBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10E9A514D11879004B5EFE /* EditorBuffer.m */; };
 		FC10E9A914D11A60004B5EFE /* Class.lua in Resources */ = {isa = PBXBuildFile; fileRef = FC10E9A714D11A60004B5EFE /* Class.lua */; };
@@ -250,6 +256,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB7123DD1580388500970405 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		DB7123E01580388900970405 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		DB7123E21580389000970405 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		DB7123E41580389400970405 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		DB7123E61580389900970405 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		DB7123E81580389D00970405 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		FC0043C214F5239200F4B97B /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		FC0043C414F5239200F4B97B /* _detail.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = _detail.hpp; sourceTree = "<group>"; };
 		FC0043C514F5239200F4B97B /* _fixes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = _fixes.hpp; sourceTree = "<group>"; };
@@ -1248,6 +1260,12 @@
 				FC65BDE714CEB3CE002B1B67 /* Classes */,
 				FC65BDE014CEB3CE002B1B67 /* Frameworks */,
 				FC65BDDE14CEB3CE002B1B67 /* Products */,
+				DB7123E81580389D00970405 /* Default-Portrait~ipad.png */,
+				DB7123E61580389900970405 /* Default-Portrait@2x~ipad.png */,
+				DB7123E41580389400970405 /* Default-Landscape~ipad.png */,
+				DB7123E21580389000970405 /* Default-Landscape@2x~ipad.png */,
+				DB7123E01580388900970405 /* Icon-72.png */,
+				DB7123DD1580388500970405 /* Icon-72@2x.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1962,6 +1980,12 @@
 				FC129DD615459B45007BD6BB /* CaptureSaveItButton.png in Resources */,
 				FC129DD715459B45007BD6BB /* CaptureSaveItButton@2x.png in Resources */,
 				FC129DDA15459B66007BD6BB /* MadeWithCodea.png in Resources */,
+				DB7123DE1580388500970405 /* Icon-72@2x.png in Resources */,
+				DB7123E11580388900970405 /* Icon-72.png in Resources */,
+				DB7123E31580389000970405 /* Default-Landscape@2x~ipad.png in Resources */,
+				DB7123E51580389400970405 /* Default-Landscape~ipad.png in Resources */,
+				DB7123E71580389900970405 /* Default-Portrait@2x~ipad.png in Resources */,
+				DB7123E91580389D00970405 /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
