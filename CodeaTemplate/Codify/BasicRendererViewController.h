@@ -114,6 +114,7 @@
 - (void) clearSupportedOrientations;
 - (void) addSupportedOrientation:(NSUInteger)codeaOrientation;
 
+- (void) setupDataStore;
 - (void) setupRenderGlobals;
 - (void) setupPhysicsGlobals;
 - (void) setupAccelerometerValues;

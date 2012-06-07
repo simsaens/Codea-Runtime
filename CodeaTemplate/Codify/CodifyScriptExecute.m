@@ -51,8 +51,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
         */
         
         //Pre-load classes and sandbox lua files
-        [preloadScripts addObject:SCRIPT_STRING("LuaSandbox")];
-        [preloadScripts addObject:SCRIPT_STRING("Class")];
+        [preloadScripts addObject:SCRIPT_STRING("LuaSandbox")];             
+        [preloadScripts addObject:SCRIPT_STRING("Class")];             
         //luaSandbox = [[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LuaSandbox" ofType:@"lua"] usedEncoding:NULL error:NULL] retain];
         //luaClasses = [[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Class" ofType:@"lua"] usedEncoding:NULL error:NULL] retain];        
         
@@ -97,6 +97,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
     [scriptState close];
     [scriptState createWithFakeLibs];
     [renderController setupRenderGlobals];
+    [renderController setupPhysicsGlobals];    
+    [renderController setupDataStore];     
     
     BOOL containsErrors = ![self loadAdditionalCode];    
     
@@ -134,6 +136,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
     [scriptState create];
     [renderController setupRenderGlobals];    
     [renderController setupPhysicsGlobals];
+    [renderController setupDataStore]; 
     [renderController setupAccelerometerValues];
     
     if( ![self loadAdditionalCode] )

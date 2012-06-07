@@ -96,8 +96,6 @@ void removeLocalDataForPrefix(NSString* name)
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:prefix];
 }
 
-
-
 int clearLocalData(lua_State *L)
 {
     [currentLocalStore release];
@@ -108,17 +106,44 @@ int clearLocalData(lua_State *L)
 
 int saveLocalData(lua_State *L)
 {
-    assert(currentPrefix != nil);
-    int num = saveData(L, currentLocalStore);
-    saveLocalStore();
-    return num;
+    if( currentPrefix != nil )
+    {
+        int num = saveData(L, currentLocalStore);
+        saveLocalStore();
+        return num;
+    }
+    
+    return 0;
 }
 
 int readLocalData(lua_State *L)
 {
-    assert(currentPrefix != nil);
-    int num = readData(L, currentLocalStore);
-    return num;
+    if( currentPrefix != nil )
+    {
+        int num = readData(L, currentLocalStore);
+        return num;
+    }
+    
+    return 0;
+}
+
+int listLocalData(lua_State *L)
+{
+    if( currentPrefix != nil )
+    {
+        lua_newtable(L);
+        
+        int index = 1;
+        for( NSString *key in [currentLocalStore allKeys] )
+        {
+            lua_pushstring(L, [key UTF8String]);
+            lua_rawseti(L, -2, index);
+            index++;
+        }
+        return 1;
+    }
+    
+    return 0;
 }
 
 #pragma mark - Project Info
@@ -149,7 +174,7 @@ void saveProjectStore()
     {
         if(![currentProjectStore writeToFile:currentProjectDataPath atomically:YES])
         {
-            CDLog(@"Didn't write project data store for some reason");
+            DBLog(@"Didn't write project data store for some reason");
         }
     }
 }
@@ -186,17 +211,44 @@ int clearProjectData(lua_State *L)
 
 int saveProjectData(lua_State *L)
 {
-    assert(currentProjectDataPath != nil);
-    int num = saveData(L, currentProjectStore);
-    saveProjectStore();
-    return num;
+    if(currentProjectDataPath != nil)
+    {
+        int num = saveData(L, currentProjectStore);
+        saveProjectStore();
+        return num;
+    }
+    
+    return 0;
 }
 
 int readProjectData(lua_State *L)
 {
-    assert(currentProjectDataPath != nil);
-    int num = readData(L, currentProjectStore);
-    return num;
+    if(currentProjectDataPath != nil)
+    {
+        int num = readData(L, currentProjectStore);
+        return num;
+    }
+    
+    return 0;
+}
+
+int listProjectData(lua_State *L)
+{
+    if( currentProjectDataPath != nil )
+    {
+        lua_newtable(L);
+        
+        int index = 1;
+        for( NSString *key in [currentProjectStore allKeys] )
+        {
+            lua_pushstring(L, [key UTF8String]);
+            lua_rawseti(L, -2, index);
+            index++;
+        }
+        return 1;
+    }
+    
+    return 0;
 }
 
 #pragma mark - Global Data
@@ -232,6 +284,25 @@ int readGlobalData(lua_State *L)
     assert(currentGlobalStore != nil);
     int num = readData(L, currentGlobalStore);
     return num;    
+}
+
+int listGlobalData(lua_State *L)
+{
+    if( currentGlobalStore != nil )
+    {
+        lua_newtable(L);
+        
+        int index = 1;
+        for( NSString *key in [currentGlobalStore allKeys] )
+        {
+            lua_pushstring(L, [key UTF8String]);
+            lua_rawseti(L, -2, index);
+            index++;
+        }
+        return 1;
+    }
+    
+    return 0;
 }
 
 #pragma mark - Generic Functions
@@ -437,7 +508,7 @@ UIImage* createUIImageFromImage(image_type* image)
     UIImage *newImage = [UIImage imageWithCGImage:imageRef];
     CGDataProviderRelease(provider);
     CGImageRelease(imageRef);
-	CGColorSpaceRelease(colorSpaceRef);
+    CGColorSpaceRelease(colorSpaceRef);    
     
     // Flip image    
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:newImage];        

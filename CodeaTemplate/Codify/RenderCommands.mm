@@ -1293,6 +1293,8 @@ int rect(lua_State *L)
             1,   1,
         };
         
+        [renderAPI setBlendMode:BLEND_MODE_PREMULT];        
+        
         //Load uniforms into shader            
         Shader *shader = nil;
         
@@ -1313,7 +1315,6 @@ int rect(lua_State *L)
         
         [renderAPI setAttributeNamed:@"Vertex" withPointer:rectVerts size:2 andType:GL_FLOAT];
         [renderAPI setAttributeNamed:@"TexCoord" withPointer:rectUV size:2 andType:GL_FLOAT];        
-        [renderAPI setBlendMode:BLEND_MODE_PREMULT];
 
         if( [shader hasUniform:@"Size"] )
             glUniform2f([shader uniformLocation:@"Size"], w, h);
@@ -1393,6 +1394,8 @@ int ellipse(struct lua_State *L)
             x+w, y+h,
         };        
                 
+        [renderAPI setBlendMode:BLEND_MODE_PREMULT];        
+        
         //Load uniforms into shader
         Shader *shader = nil;
         if( [renderAPI useStroke] )
@@ -1406,7 +1409,6 @@ int ellipse(struct lua_State *L)
         
         [renderAPI setAttributeNamed:@"Vertex" withPointer:ellipseVerts size:2 andType:GL_FLOAT];
         [renderAPI setAttributeNamed:@"TexCoord" withPointer:ellipseUV size:2 andType:GL_FLOAT];        
-        [renderAPI setBlendMode:BLEND_MODE_PREMULT];
 
         glUniform2f([shader uniformLocation:@"Radius"], w, h);
         
@@ -1479,11 +1481,12 @@ int point(lua_State *L)
         };
         
         //Load uniforms into shader    
+        [renderAPI setBlendMode:BLEND_MODE_PREMULT];        
+        
         Shader *shader = [renderAPI useShader:@"CircleNoStroke"];        
         
         [renderAPI setAttributeNamed:@"Vertex" withPointer:ellipseVerts size:2 andType:GL_FLOAT];
         [renderAPI setAttributeNamed:@"TexCoord" withPointer:ellipseUV size:2 andType:GL_FLOAT];        
-        [renderAPI setBlendMode:BLEND_MODE_PREMULT];
 
         glUniform2f([shader uniformLocation:@"Radius"], w, h);
         
@@ -1544,6 +1547,8 @@ int line(lua_State *L)
                 x2, y2
             };
             
+            [renderAPI setBlendMode:BLEND_MODE_PREMULT];            
+            
             [renderAPI useShader:@"SimpleLine"];        
             [renderAPI setAttributeNamed:@"Vertex" withPointer:linePoints size:2 andType:GL_FLOAT];
             
@@ -1597,10 +1602,11 @@ int line(lua_State *L)
                 1,   1,
             }; 
             
+            [renderAPI setBlendMode:BLEND_MODE_PREMULT];
+            
             Shader* shader = [renderAPI useShader:@"Line"];
             [renderAPI setAttributeNamed:@"Vertex" withPointer:linePoints size:2 andType:GL_FLOAT];
             [renderAPI setAttributeNamed:@"TexCoord" withPointer:lineUV size:2 andType:GL_FLOAT];            
-            [renderAPI setBlendMode:BLEND_MODE_PREMULT];
             
             glUniform2f([shader uniformLocation:@"Size"],len,strokeWidth);
             glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);

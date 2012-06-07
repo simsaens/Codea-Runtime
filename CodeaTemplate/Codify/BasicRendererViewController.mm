@@ -104,14 +104,14 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	
-	if(self){
-		supportedOrientations = [[NSMutableSet alloc] initWithCapacity:4];
-		[self addSupportedOrientation:ORIENTATION_ANY];
-	}
-	
-	return self;
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+           
+    if(self){
+        supportedOrientations = [[NSMutableSet alloc] initWithCapacity:4];
+        [self addSupportedOrientation:ORIENTATION_ANY];
+    }
+
+    return self;
 }
 
 - (void) setup
@@ -176,6 +176,18 @@
     
     screenCapture = [[ScreenCapture alloc] initWithGLView:glView];
     screenCapture.delegate = self;
+}
+
+- (void) setupDataStore
+{
+    if( self.project )
+    {
+        setLocalDataPrefix(self.project.name);
+        setProjectDataPath(self.project.bundlePath);
+        setProjectInfoStore(self.project.info);    
+    }
+    
+    setupGlobalData();       
 }
 
 - (void) setupRenderGlobals
@@ -489,7 +501,7 @@
 #pragma mark - View preparation
 
 - (void) prepareViewForDisplay
-{
+{        
     //Do some basic GL setup    
     [self startAnimation];           
     [self initialDrawSetup];          
@@ -572,7 +584,7 @@
     
     //Create keyboard input view
     keyboardInputView = [[KeyboardInputView alloc] init];
-    [self.view addSubview:keyboardInputView];
+    [self.view addSubview:keyboardInputView];    
     
     keyboardInputView.delegate = self;
 }
@@ -932,11 +944,6 @@
     [physicsManager reset];
     pc_initialize(physicsManager);    
     
-    setLocalDataPrefix(self.project.name);
-    setProjectDataPath(self.project.bundlePath);
-    setProjectInfoStore(self.project.info);    
-    setupGlobalData();        
-    
     self.glView.retainedBacking = NO;    
     [self.glView setFramebuffer];    
     
@@ -1151,7 +1158,7 @@
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationLandscapeRight]];                                                
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationPortrait]];            
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationPortraitUpsideDown]];                                    
-            break;
+            break;       
             
         default: //Default to landscape left and right
             [supportedOrientations addObject:[NSNumber numberWithUnsignedInteger:UIInterfaceOrientationLandscapeLeft]];                                    
