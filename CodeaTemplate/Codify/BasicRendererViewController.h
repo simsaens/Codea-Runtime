@@ -119,4 +119,6 @@
 - (void) setupPhysicsGlobals;
 - (void) setupAccelerometerValues;
 
+- (void) cleanupDataStore;
+
 @end

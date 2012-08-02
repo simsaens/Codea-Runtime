@@ -22,11 +22,13 @@
 
 arg=nil
 
+--[[
 setfenv=nil
 getfenv=nil
 string.dump=nil
 dofile=nil
 io={write=io.write}
+--]]
 
 load=nil
 loadfile=nil

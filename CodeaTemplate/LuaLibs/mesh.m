@@ -102,7 +102,7 @@ static void resizeBuffer(float_buffer* buffer, int newLength)
         if(buffer->buffer != NULL)
         {
             //Zero out new parts of the buffer            
-            for( int i = MAX( buffer->length-1, 0 ); i < newLength; i++ )
+            for( int i = MAX( buffer->length, 0 ); i < newLength; i++ )
             {
                 buffer->buffer[ i * buffer->elementSize ] = 0;
             }

@@ -21,20 +21,41 @@
 
 #import "UIImage+Resize.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation UIImage (Resize)
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize scaleFactor:(CGFloat)factor
 {
     UIGraphicsBeginImageContextWithOptions(newSize, NO, factor);
+    
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();    
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
     UIGraphicsEndImageContext();
+ 
     return newImage;
 }
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize
 {
     return [UIImage imageWithImage:image scaledToSize:newSize scaleFactor:0.0];
+}
+
++ (UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    
+    CGContextRef imageContext = UIGraphicsGetCurrentContext();
+    
+    [view.layer renderInContext:imageContext];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
 }
 
 @end

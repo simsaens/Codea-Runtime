@@ -24,6 +24,7 @@
 #import "SharedRenderer.h"
 #import "EditorBuffer.h"
 #import "LuaState.h"
+#import "ProjectManager.h"
 
 @implementation CodifyScriptExecute
 @synthesize errorDelegate;
@@ -88,6 +89,47 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
     return !containsErrors;
 }
 
+- (BOOL) loadDependentProjects:(Project*)project
+{
+    BOOL containsErrors = NO;
+    
+    for( NSString *dep in project.dependencies )
+    {
+        LuaState *scriptState = [LuaState sharedInstance];
+        Project *dependentProject = [[ProjectManager sharedInstance] userProjectNamed:dep];
+        
+        if( dependentProject )
+        {
+            [dependentProject load];
+            
+            for( int i = 0; i < dependentProject.buffers.count; i++ )
+            {
+                EditorBuffer *buffer = [dependentProject.buffers objectAtIndex:i];
+                NSString *bufferName = [dependentProject.bufferNames objectAtIndex:i];
+                
+                //Load all buffers except for "Main"
+                if( ![bufferName isEqualToString:@"Main"] )
+                {
+                    //Attempt to load this buffer into the Lua state
+                    LuaError error = [scriptState loadString:buffer.text];
+                    
+                    if( error.lineNumber != NSNotFound )
+                    {
+                        containsErrors = YES;
+                        
+                        if( [errorDelegate respondsToSelector:@selector(error:inBuffer:inDependentProject:)] )
+                        {
+                            [errorDelegate error:error inBuffer:bufferName inDependentProject:dependentProject.name];
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return !containsErrors;
+}
+
 - (BOOL) validateProject:(Project*)project
 {
     //Get the script state
@@ -100,7 +142,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
     [renderController setupPhysicsGlobals];    
     [renderController setupDataStore];     
     
-    BOOL containsErrors = ![self loadAdditionalCode];    
+    BOOL containsErrors = ![self loadAdditionalCode];
+    
+    containsErrors = ![self loadDependentProjects:project];
     
     for( EditorBuffer *buffer in project.buffers )
     {
@@ -123,6 +167,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
         }
     }
     
+    if( containsErrors )
+    {
+        [renderController cleanupDataStore];
+    }
+    
     return !containsErrors;
 }
 
@@ -140,6 +189,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CodifyScriptExecute);
     [renderController setupAccelerometerValues];
     
     if( ![self loadAdditionalCode] )
+    {
+        return NO;
+    }
+    
+    if( ![self loadDependentProjects:project] )
     {
         return NO;
     }

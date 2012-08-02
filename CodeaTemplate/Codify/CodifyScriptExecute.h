@@ -28,6 +28,7 @@
 
 @protocol ScriptValidateErrorDelegate <NSObject>
 - (void) error:(LuaError)error inBuffer:(EditorBuffer*)buffer;
+- (void) error:(LuaError)error inBuffer:(NSString*)bufferName inDependentProject:(NSString*)projectName;
 @end
 
 @interface CodifyScriptExecute : NSObject

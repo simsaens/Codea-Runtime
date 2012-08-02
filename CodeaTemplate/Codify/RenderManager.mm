@@ -890,10 +890,12 @@ int printOglError(const char *file, int line)
         switch (currentBlendMode) 
         {
             case BLEND_MODE_NORMAL:
-                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, 
+                                    GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
                 break;
             case BLEND_MODE_PREMULT:
-                glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+                glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);                
                 break;
             default:
                 break;

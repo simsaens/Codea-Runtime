@@ -190,6 +190,13 @@
     setupGlobalData();       
 }
 
+- (void) cleanupDataStore
+{
+    setLocalDataPrefix(nil);
+    setProjectDataPath(nil);
+    setProjectInfoStore(nil);
+}
+
 - (void) setupRenderGlobals
 {    
     //Create a global touch

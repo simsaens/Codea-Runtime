@@ -9,6 +9,7 @@ Versions
 -------
 The topmost is the current version.
 
+- **1.4.3** Current Codea Version - Mostly bug fixes
 - **1.4.2** Current Codea Beta version
 - **1.4.1** Current Codea version
 - **1.3.6** Release BETA Version
@@ -66,6 +67,7 @@ Sprite Pack Attribution
 + "Small World" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
 + "SpaceCute" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
 + "Tyrian Remastered" art by Daniel Cook ([Lostgarden.com](http://lostgarden.com))
++ "Cargo Bot" art by Simeon ([Two Lives Left](http://twolivesleft.com))
 
 Copyright and Trademark Guidelines
 ----------------------------------

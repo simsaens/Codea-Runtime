@@ -232,6 +232,7 @@
 		FC65C1B614CEC62B002B1B67 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC65C1B514CEC62B002B1B67 /* CoreMedia.framework */; };
 		FC65C1BA14CED49E002B1B67 /* CodifyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65C1B914CED49E002B1B67 /* CodifyAppDelegate.m */; };
 		FC852AA314F52BD70001E8C9 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = FC852AA214F52BD70001E8C9 /* UIDevice-Hardware.m */; };
+		FC9EBE1115CAAE70002D647C /* ProjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9EBE1015CAAE70002D647C /* ProjectManager.m */; };
 		FCCF511E14F4E79300A9E63D /* SharedRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF511D14F4E79300A9E63D /* SharedRenderer.m */; };
 		FCCF512114F4E84C00A9E63D /* soundbuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF512014F4E84C00A9E63D /* soundbuffer.m */; };
 		FCCF512714F4E8BB00A9E63D /* DeviceCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF512614F4E8BB00A9E63D /* DeviceCommands.m */; };
@@ -871,6 +872,8 @@
 		FC852AA214F52BD70001E8C9 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice-Hardware.m"; path = "Codify/UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		FC852AA814F52D830001E8C9 /* swizzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = swizzle.hpp; sourceTree = "<group>"; };
 		FC852AA914F52D830001E8C9 /* swizzle.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swizzle.inl; sourceTree = "<group>"; };
+		FC9EBE0F15CAAE70002D647C /* ProjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectManager.h; path = Codify/ProjectManager.h; sourceTree = "<group>"; };
+		FC9EBE1015CAAE70002D647C /* ProjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectManager.m; path = Codify/ProjectManager.m; sourceTree = "<group>"; };
 		FCCF511C14F4E79300A9E63D /* SharedRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedRenderer.h; path = Codify/SharedRenderer.h; sourceTree = "<group>"; };
 		FCCF511D14F4E79300A9E63D /* SharedRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SharedRenderer.m; path = Codify/SharedRenderer.m; sourceTree = "<group>"; };
 		FCCF511F14F4E84C00A9E63D /* soundbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundbuffer.h; sourceTree = "<group>"; };
@@ -1681,6 +1684,8 @@
 				FC65C12614CEB89B002B1B67 /* PhysicsCommands.mm */,
 				FC65C12714CEB89B002B1B67 /* PhysicsManager.h */,
 				FC65C12814CEB89B002B1B67 /* PhysicsManager.mm */,
+				FC9EBE0F15CAAE70002D647C /* ProjectManager.h */,
+				FC9EBE1015CAAE70002D647C /* ProjectManager.m */,
 				FC65C12C14CEB8A7002B1B67 /* RenderCommands.h */,
 				FC65C12D14CEB8A7002B1B67 /* RenderCommands.mm */,
 				FC65C13214CEB8B1002B1B67 /* RenderManager.h */,
@@ -2160,6 +2165,7 @@
 				FCDFAB1A151D6E9D002766CC /* OSCommands.m in Sources */,
 				FC129DAD15459124007BD6BB /* BasicRendererViewController.mm in Sources */,
 				FC245A4315762CCF00E227DD /* UIImage+Resize.m in Sources */,
+				FC9EBE1115CAAE70002D647C /* ProjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

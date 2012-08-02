@@ -32,7 +32,7 @@ extern "C" {
 #endif 
 
     int saveLocalData(lua_State *L);
-    int readLocalData(lua_State *L);
+    int readLocalData(  lua_State *L);
     int clearLocalData(lua_State *L);
     int listLocalData(lua_State *L);
     

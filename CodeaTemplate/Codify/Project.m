@@ -57,6 +57,66 @@
     return NO;
 }
 
+#pragma mark - Dependencies
+
+- (NSArray*) dependencies
+{
+    NSArray *dep = [self.info objectForKey:@"Dependencies"];
+    
+    return dep;
+}
+
+- (BOOL) hasDependency:(NSString*)projectName
+{
+    NSArray *deps = self.dependencies;
+
+    if( deps )
+    {
+        return [deps containsObject:projectName];
+    }
+    
+    return NO;
+}
+
+- (void) addDependency:(NSString*)projectName
+{
+    if( ![self hasDependency:projectName] )
+    {
+        NSMutableArray *deps;
+        
+        if( self.dependencies )
+        {
+            deps = [[self.dependencies mutableCopy] autorelease];
+        }
+        else
+        {
+            deps = [NSMutableArray array];
+        }
+        
+        [deps addObject:projectName];        
+        [self.info setObject:deps forKey:@"Dependencies"];
+    }
+}
+
+- (void) removeDependency:(NSString*)projectName
+{
+    if( [self hasDependency:projectName] )
+    {
+        NSMutableArray *deps;
+        
+        if( self.dependencies )
+        {
+            deps = [[self.dependencies mutableCopy] autorelease];
+            
+            NSUInteger idx = [deps indexOfObject:projectName];
+
+            [deps removeObjectAtIndex:idx];
+            
+            [self.info setObject:deps forKey:@"Dependencies"];            
+        }
+    }
+}
+
 #pragma mark - Saving
 
 - (BOOL) writeToBundlePath:(NSString*)theBundlePath

@@ -98,7 +98,10 @@ static int Lget( lua_State *L )
     }    
     else
     {
-        lua_pushnil(L);
+        //Load the metatable and value for key
+        luaL_getmetatable(L, TOUCHTYPE);
+        lua_pushstring(L, c);
+        lua_gettable(L, -2);
     }
     
     return 1;

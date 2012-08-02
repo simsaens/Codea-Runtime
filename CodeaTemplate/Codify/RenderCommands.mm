@@ -122,7 +122,7 @@ int background(lua_State *L)
         }   break;
     }
     
-    glClear(GL_COLOR_BUFFER_BIT);    
+    glClear(GL_COLOR_BUFFER_BIT);
     
     return 0;
 }
@@ -1139,8 +1139,8 @@ int spriteSize(struct lua_State *L)
     
             CCTexture2D *texture = [[SpriteManager sharedInstance] spriteTextureFromString:spriteName];
         
-            lua_pushinteger(L, texture.pixelsWide / [SharedRenderer renderer].glView.contentScaleFactor );
-            lua_pushinteger(L, texture.pixelsHigh / [SharedRenderer renderer].glView.contentScaleFactor );        
+            lua_pushinteger(L, texture.pixelsWide / texture.scale );
+            lua_pushinteger(L, texture.pixelsHigh / texture.scale );        
         
             return 2;
         }
@@ -1173,24 +1173,6 @@ int sprite(struct lua_State *L)
             if (image->dataChanged || image->texture == nil)
             {                
                 updateImageTextureIfRequired(image);
-                
-                //Pre multiply the alpha
-//                size_t textureSize = image->width*image->height*sizeof(image_type_data);
-//                image_type_data* premultData = (image_type_data*)malloc(textureSize);
-//                memcpy(premultData, image->data, textureSize);
-//                image_type_data* dataPtr = premultData;
-//                size_t len = image->width*image->height;
-//                for(int i=0; i < len; i++, dataPtr++)
-//                {
-//                    image_color_element alpha = dataPtr->a;
-//                    dataPtr->r = (image_color_element)(dataPtr->r/255.f*alpha);
-//                    dataPtr->g = (image_color_element)(dataPtr->g/255.f*alpha);
-//                    dataPtr->b = (image_color_element)(dataPtr->b/255.f*alpha);
-//                    //dataPtr->a = alpha;
-//                }
-                //End premultiply
-
-                //free(premultData); premultData = 0;
             }
             
             if( image->premultiplied )

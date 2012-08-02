@@ -33,6 +33,7 @@
 @property (nonatomic,readonly) NSMutableArray *bufferNames;
 @property (readonly) NSMutableArray *buffers;
 @property (nonatomic,readonly) NSArray *codeFiles;
+@property (nonatomic,readonly) NSArray *dependencies;
 
 @property (nonatomic,readonly) BOOL isLoaded;
 
@@ -40,5 +41,9 @@
 
 - (void) load;
 - (void) unload;
+
+- (BOOL) hasDependency:(NSString*)projectName;
+- (void) addDependency:(NSString*)projectName;
+- (void) removeDependency:(NSString*)projectName;
 
 @end

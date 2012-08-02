@@ -433,7 +433,7 @@ LUALIB_API int luaopen_vec3(lua_State *L)
     
     //luaL_openlib(L,NULL,R,0);
     luaL_register(L, NULL, R);
-    
     lua_register(L,"vec3",Lnew);
+    
     return 1;
 }

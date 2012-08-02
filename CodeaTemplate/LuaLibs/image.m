@@ -311,8 +311,8 @@ image_type* pushimage(lua_State *L, unsigned char* data, size_t width, size_t he
 {
     image_type *v=Pnew(L);
     
-    v->rawWidth = width;
-    v->rawHeight = height;
+    v->rawWidth = width * scale;
+    v->rawHeight = height * scale;
     v->scaledWidth = width;
     v->scaledHeight = height;
     v->scaleFactor = scale;
@@ -381,10 +381,12 @@ image_type* pushUIImage(lua_State* L, UIImage* image)
 {
     CGImageRef imageRef = image.CGImage;
     
+    //This is the raw width and height of the image
 	size_t width = CGImageGetWidth(imageRef);
 	size_t height = CGImageGetHeight(imageRef);
 
-    image_type* luaImage = pushimage(L, NULL, width, height, 1, image.scale);
+    //Call this with the UIImage's reported size (in case of retina)
+    image_type* luaImage = pushimage(L, NULL, image.size.width, image.size.height, 1, image.scale);
     if (!luaImage) 
     {
         NSLog(@"Error creating lua image");
