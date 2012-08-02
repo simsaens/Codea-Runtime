@@ -34,13 +34,16 @@ extern "C" {
     int saveLocalData(lua_State *L);
     int readLocalData(lua_State *L);
     int clearLocalData(lua_State *L);
+    int listLocalData(lua_State *L);
     
     int saveProjectData(lua_State *L);
     int readProjectData(lua_State *L);
     int clearProjectData(lua_State *L);
+    int listProjectData(lua_State *L);
     
     int saveGlobalData(lua_State *L);
     int readGlobalData(lua_State *L);
+    int listGlobalData(lua_State *L);    
     
     int saveProjectInfo(lua_State *L);
     int readProjectInfo(lua_State *L);    

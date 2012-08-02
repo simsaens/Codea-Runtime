@@ -9,7 +9,8 @@ Versions
 -------
 The topmost is the current version.
 
-- **1.4.1** Update to current Codea version.
+- **1.4.2** Current Codea Beta version
+- **1.4.1** Current Codea version
 - **1.3.6** Release BETA Version
 
 License
